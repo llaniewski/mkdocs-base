@@ -4,10 +4,13 @@ author: "Łukasz Łaniewski-Wołłk"
 date: "Mar 8, 2016"
 output: html_document
 ---
+
+# Finite difference wave equation
+
 These tutorials will try to teach you how to make and use a new model in TCLB. First it will discuss our goal: the model we want to create. Then it will take you step by step, on how to create all the needed components.
 
 
-#Finite difference wave equation
+# Finite difference wave equation
 We want to discretize the [Wave Equation](https://en.wikipedia.org/wiki/Wave_equation):
 
 \[\ddot{u} = c^2\Delta u\]

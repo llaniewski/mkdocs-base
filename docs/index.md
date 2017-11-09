@@ -1,17 +1,16 @@
-# Welcome to MkDocs
+---
+title: Welcome to TCLB
+author: "Paweł Obrępalski"
+date: "July 4, 2017"
+output: html_document
+---
 
-For full documentation visit [mkdocs.org](http://mkdocs.org).
 
-## Commands
+##Site map
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs help` - Print this help message.
+This site contains documentation to the [TCLB solver](https://github.com/CFD-GO/TCLB/). Documentation is split in 4 parts.
 
-## Project layout
-
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+1.  [User Manual](user_installation.html) - Information about downloading and installing TCLB, performing calculations, setting up a simple case, and analysing results. 
+2. [Model Development](model_info.html) - Contains information necessary to develop/modify models, includes tutorials which showcase basic concepts used in code.
+3. [XML Reference](xml_callbacks.html) - Useful when configuring more advanced cases, contains documentation of supported functions.
+4. [Developer Manual](https://github.com/CFD-GO/TCLB/) - Documentation and examples useful in working with TCLB solver.
