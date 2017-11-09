@@ -7,7 +7,7 @@
 
 Main solution element. It runs a prescribed number of iterations.
  
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
@@ -21,7 +21,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]])
 ```
 
  
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]), [[Executions]] ([[<code>&lt;Solve/&gt;</code>|Executions#solve]], [[<code>&lt;Adjoint/&gt;</code>|Executions#adjoint]], [[<code>&lt;Optimize/&gt;</code>|Executions#optimize]], [[<code>&lt;Threshold/&gt;</code>|Executions#threshold]], [[<code>&lt;ThresholdNow/&gt;</code>|Executions#thresholdnow]], [[<code>&lt;Repeat/&gt;</code>|Executions#repeat]], [[<code>&lt;LoadBinary/&gt;</code>|Executions#loadbinary]], [[<code>&lt;SaveBinary/&gt;</code>|Executions#savebinary]], [[<code>&lt;LoadMemoryDump/&gt;</code>|Executions#loadmemorydump]], [[<code>&lt;SaveMemoryDump/&gt;</code>|Executions#savememorydump]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump)) 
 
 
 | Attribute | Comment | Value |
@@ -35,7 +35,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]), 
 ```
 
  
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]), [[Executions]] ([[<code>&lt;Solve/&gt;</code>|Executions#solve]], [[<code>&lt;Adjoint/&gt;</code>|Executions#adjoint]], [[<code>&lt;Optimize/&gt;</code>|Executions#optimize]], [[<code>&lt;Threshold/&gt;</code>|Executions#threshold]], [[<code>&lt;ThresholdNow/&gt;</code>|Executions#thresholdnow]], [[<code>&lt;Repeat/&gt;</code>|Executions#repeat]], [[<code>&lt;LoadBinary/&gt;</code>|Executions#loadbinary]], [[<code>&lt;SaveBinary/&gt;</code>|Executions#savebinary]], [[<code>&lt;LoadMemoryDump/&gt;</code>|Executions#loadmemorydump]], [[<code>&lt;SaveMemoryDump/&gt;</code>|Executions#savememorydump]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump)) 
 
 
 | Attribute | Comment | Value |
@@ -57,7 +57,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]), 
 
 Goes with a threshold from 0 to 1. Then for a specific threshold sets all the parameter below the threshold to 0 and above the threshold to 1. Then runs the calculation for the binary (0-1) parameter set.
  
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
@@ -73,7 +73,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]])
 
 For a specific threshold sets all the parameter below the threshold to 0 and above the threshold to 1. Then runs the calculation for the binary (0-1) parameter set.
  
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
@@ -92,7 +92,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]])
 ```
 
 A loop element 
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
@@ -107,7 +107,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]])
 ```
 
 Load a Field from a binary file (low level) 
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
@@ -123,7 +123,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]])
 ```
 
 Save a Field to a binary file (low level) 
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
@@ -140,7 +140,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]])
 ```
 
 Load all fields from a dump created by Save element 
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
@@ -157,7 +157,7 @@ Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]])
 Save all fields, to be loaded later on with LoadMemoryDump
 Warning: Save and Load Memory Dump have to be used on the *same number of cores*, same model and same precision.
  
-Possible children: [[Params]] ([[<code>&lt;Params/&gt;</code>|Params#params]]) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
 
 
 | Attribute | Comment | Value |
