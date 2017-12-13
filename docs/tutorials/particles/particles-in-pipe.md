@@ -341,3 +341,53 @@ on the force applied to the fluid flow.
 Our simulation is set up to be executed in a Spawning approach. This means
 that we will run TCLB, and TCLB will dynamically spawn ESYS-Particle code.
 
+To say to MPI that we have a limited number of slots for process execution
+(cores), we need to create a hostfile:
+
+```
+localhost
+localhost
+localhost
+localhost
+```
+
+This hostfile is very simple, and just says that we have 4 avaliable slots
+on our computer (localhost). In a multi-computer setup (eg. cluster), we
+would specify all the nodes involved.
+
+Now we can run TCLB with:
+
+```bash
+mpirun -hostfile hostfile -np 1 CLB/d3q27_cumulant_part/main pipe.xml
+```
+
+This will execute a single process of TCLB, which will in turn spawn 3
+processes of ESYS (it will fill up the avaliable space). This means that it
+will run a single master process and 2 worker processes. It will also
+generate the Python setup file for ESYS, with appropriate division of the
+domain and number of processes. You can inspect the generated file, which is
+it `output/pipe_ESYS.py`.
+
+#### MPMD
+
+We can also run the case in a Multiple Program Multiple Data (MPMD) approach.
+This means executing both programs at the same time. As ESYS is executed
+immediately, we have to provide our own Python configuration file. In our
+case, we can use the `output/pipe_ESYS.py` as the template.
+
+To run the both codes we use the runmpi's MPMD syntax:
+
+```bash
+mpirun -np 1 CLB/d3q27_cumulant_part/main pipe.xml : -np 3 esysparticle pipe.py
+```
+
+As the configuration for ESYS is not generated we can delete all contents of
+the `<RemoteForceInterface>` XML element (but we have to keep it, so that
+TCLB knows we want to connect with ESYS.
+
+### Results
+
+Both the fluid results and particle data can be loaded into ParaView.
+ParaView also reads stl files. The example results look like this:
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/OL-wsA36kYI?rel=0&amp;controls=0&amp;showinfo=0" frameborder="0" gesture="media" allow="encrypted-media" allowfullscreen></iframe>
