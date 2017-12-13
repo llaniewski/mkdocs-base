@@ -219,7 +219,7 @@ Now we can add our STL geometry. We want mark all elements *outside* of the
 geometry with `Wall` elements (and switch off collision):
 ```xml
                 <Wall mask="ALL">
-                       <STL file="os_test1.b.stl" side="out"/>
+                       <STL file="pipe.stl" side="out"/>
                 </Wall>
 ```
 
