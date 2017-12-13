@@ -1,9 +1,17 @@
 site_name: TCLB Reference Manual
+site_description: The reference manual for the TCLB solver
+site_author: Lukasz Laniewski-Wollk
+
 theme:
   name: 'material'
+repo_name: CFD-GO/TCLB
+repo_url: https://github.com/CFD-GO/TCLB
+edit_uri: ""
+
 markdown_extensions:
     - fenced_code
     - codehilite
     - mdx_math
+    - admonition
 extra_javascript: 
     - https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js?config=TeX-AMS-MML_HTMLorMML
