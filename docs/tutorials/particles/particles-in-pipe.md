@@ -4,6 +4,16 @@
 	All these features related to particles are supported only in the
 	[particle](https://github.com/llaniewski/TCLB/tree/particles) branch
 
+## Case
+
+The case consists of 5 balls of radious 30, placed along Y axis, connected
+by a narrowing cone, like on a picture:
+
+![Pape case drawing](pipe.png)
+
+The particles will be placed in the wide section, and driven by the force
+applied to the flow.
+
 ## Geometry
 
 We will use the OpenSCAD software to create the geometry. It will consist of
@@ -323,7 +333,11 @@ sim.createCheckPointer (
 		</RemoteForceInterface>
 ```
 
+We deleted the now the gravity force acting on the particles, and rely only
+on the force applied to the fluid flow.
+
 ### Running TCLB and ESYS
 
 Our simulation is set up to be executed in a Spawning approach. This means
 that we will run TCLB, and TCLB will dynamically spawn ESYS-Particle code.
+
