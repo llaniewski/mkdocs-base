@@ -5,12 +5,24 @@ date: "July 4, 2017"
 output: html_document
 ---
 
+The TCLB code is a parallel Lattice Boltzmann Method solver, able to run on multi-GPU
+cluster architectures.
 
-##Site map
+For a quick start, please refer to the [Getting Started
+guide](/1.-getting-started/).
 
-This site contains documentation to the [TCLB solver](https://github.com/CFD-GO/TCLB/). Documentation is split in 4 parts.
+Detailed descriptions of configuration of the code and compilation, can be
+found in the "Installation" part of this manual. The "Running simulations"
+part details the setup and execution of fluid flow simulations with TCLB.
+The "Post-processing" details the way you can analyze the results. The
+"Model development" part is a reference for developers wanting to add or
+modify models in TCLB.
 
-1.  [User Manual](user_installation.html) - Information about downloading and installing TCLB, performing calculations, setting up a simple case, and analysing results. 
-2. [Model Development](model_info.html) - Contains information necessary to develop/modify models, includes tutorials which showcase basic concepts used in code.
-3. [XML Reference](xml_callbacks.html) - Useful when configuring more advanced cases, contains documentation of supported functions.
-4. [Developer Manual](https://github.com/CFD-GO/TCLB/) - Documentation and examples useful in working with TCLB solver.
+The "XML Reference" is an automaticaly generated reference of all
+XML elements avaliable for usage in the TCLB configuration files. "Models"
+is also automaticaly generated and is a reference of all models currently
+avaliable, with all apropriate data for each of them.
+
+Finnaly "Tutorials" section provides several step-by-step tutorials about
+model development and other things.
+

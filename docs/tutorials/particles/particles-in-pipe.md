@@ -34,6 +34,17 @@ translate([R,0,R]) {
 }
 ```
 
+You should get a geometry like this:
+
+<div class="sketchfab-embed-wrapper"><iframe width="640" height="480" src="https://sketchfab.com/models/57273635273048f38e91f19f42586195/embed" frameborder="0" allowvr allowfullscreen mozallowfullscreen="true" webkitallowfullscreen="true" onmousewheel=""></iframe>
+
+<p style="font-size: 13px; font-weight: normal; margin: 5px; color: #4A4A4A;">
+    <a href="https://sketchfab.com/models/57273635273048f38e91f19f42586195?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Pipe test-case for TCLB</a>
+    by <a href="https://sketchfab.com/llaniewski?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Ł Łaniewski-Wołłk</a>
+    on <a href="https://sketchfab.com?utm_medium=embed&utm_source=website&utm_campain=share-popup" target="_blank" style="font-weight: bold; color: #1CAAD9;">Sketchfab</a>
+</p>
+</div>
+
 From OpenSCAD you can export into several file formats. Export an
 ASCII STL file "pipe_txt.stl". Sadly, it is rare for any software to support ASCII STL
 files (which is also the case with TCLB). To create both binary stl file and
