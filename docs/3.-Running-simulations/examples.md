@@ -1,6 +1,6 @@
 ---
-title: "Examples"
-author: "Paweł Obrępalski"
+title: Examples
+author: Paweł Obrępalski
 date: "July 4, 2017"
 output: html_document
 ---

@@ -1,6 +1,6 @@
 ---
-title: "Model Information"
-author: "Paweł Obrępalski"
+title: Model Information
+author: Paweł Obrępalski
 date: "July 4, 2017"
 output: html_document
 ---

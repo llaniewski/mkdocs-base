@@ -1,6 +1,6 @@
 ---
-title: "D2Q9 Single Relexation Time"
-author: "Travis Mitchell"
+title: D2Q9 Single Relexation Time
+author: Travis Mitchell
 date: "May 30, 2016"
 output: html_document
 ---

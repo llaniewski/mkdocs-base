@@ -1,6 +1,6 @@
 ---
-title: "Running calculations"
-author: "Paweł Obrępalski"
+title: Running calculations
+author: Paweł Obrępalski
 date: "July 4, 2017"
 output: html_document
 ---

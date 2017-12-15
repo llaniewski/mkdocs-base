@@ -1,6 +1,6 @@
 ---
-title: "Units"
-author: "Paweł Obrępalski"
+title: Units
+author: Paweł Obrępalski
 date: "July 6, 2017"
 output: html_document
 ---

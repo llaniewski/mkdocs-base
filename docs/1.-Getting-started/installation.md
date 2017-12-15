@@ -1,6 +1,6 @@
 ---
 title: Installation
-author: "Paweł Obrępalski"
+author: Paweł Obrępalski
 date: "July 4, 2017"
 output: html_document
 ---
@@ -45,14 +45,3 @@ make configure
 make -j 10 d2q9
 ```
 Notes: `-j 10` is used to speed up the compilation process, by running multiple threads. `d2q9` is the name of the model, this solver comes with multiple models(TODO:link), which can be compiled(and used) by substituting `d2q9` for desired model name(e.g. `d3q27`).
-
-### Configuration options
-
-Option                | Effect
--------------         | ---------------------------------------------------------
-`--enable-graphics`   | Enables the (TODO:okno podglądu).
-`--disable-double`    | Switches to single(float) precision.
-`--disable-cuda`      | Disables CUDA, thus compiling the code for CPU.
-`--with-nlopt`        | Compilation with NLopt library for optimization.
-`--with-python`       | Compilation with enabled Python integration(TODO:do użycia w XML).
-`--with-r`            | Compilation with enabled R integration(TODO:do użycia w XML).
