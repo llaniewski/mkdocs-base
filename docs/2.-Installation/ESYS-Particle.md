@@ -51,7 +51,7 @@ To be able to run ESYS from our special installation directory, we need to
 set apropriate envirnment variables:
 
 ```bash
-ESPATH=$HOME/esys_inst/
+ESPATH=$HOME/esys_inst
 export PATH=$ESPATH/bin:$PATH
 export LD_LIBRARY_PATH=$ESPATH/lib:$LD_LIBRARY_PATH
 export PYTHONPATH=$ESPATH/lib/python2.7/site-packages:$PYTHONPATH
