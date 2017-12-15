@@ -115,6 +115,7 @@ geoRandomBlock = RandomBoxPacker(
 )
 geoRandomBlock.generate()
 geoRandomBlock_particles = geoRandomBlock.getSimpleSphereCollection()
+sim.createParticles(geoRandomBlock_particles)
 ```
 
 We add friction interaction between particles:
