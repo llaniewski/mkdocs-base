@@ -7,7 +7,7 @@ First, it is safe to isolate your enviroment.
 Install virtual enviroment:
 ```sh
 $ pip3 install virtualenv virtualenvwrapper
-$ source /usr/local/binyy/virtualenvwrapper.sh
+$ source /usr/local/bin/virtualenvwrapper.sh
 ```
 
 You can lookup your pythons' distributions using `$ whereis python` or just pick the default one...
