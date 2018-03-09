@@ -1,6 +1,10 @@
-# TCLB_docs
 
-This short tutorial will show you how to serve the webpage at you local machine at test your changes.
+# About TCLB_docs repo
+This repo contains documentation for the tclb solver: https://github.com/CFD-GO/TCLB
+
+## Tutorial
+
+This short tutorial will show you how to serve the webpage at you local machine and test your changes.
 
 First, it is safe to isolate your enviroment.
 
@@ -26,7 +30,6 @@ Install dependencies:
 Run server on you local machine:
 ```sh
 (tclb-docs-env) $ mkdocs serve
-
 ```
 To deploy:
 ```sh
