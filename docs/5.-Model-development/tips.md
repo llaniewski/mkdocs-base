@@ -29,7 +29,7 @@ To alleviate it, one can pre-run the solver to diffuse the interface for few ite
     </Geometry>
 
 <Solve Iterations="50" output="output/"> <VTK Iterations="1"/> </Solve>
-<Failcheck Iterations="1000" />
+<Failcheck Iterations="1000" nx="256" ny="256"/>
 <Solve Iterations="5000" output="output/"> <VTK Iterations="250"/> </Solve>
 
 </CLBConfig>
