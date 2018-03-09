@@ -26,7 +26,14 @@ Install dependencies:
 Run server on you local machine:
 ```sh
 (tclb-docs-env) $ mkdocs serve
+
 ```
+To deploy:
+```sh
+(tclb-docs-env) $ mkdocs gh-deploy
+```
+
+More questions? Visit original documentation: http://www.mkdocs.org/
 
 #### Common issues
 
