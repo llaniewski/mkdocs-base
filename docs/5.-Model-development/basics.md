@@ -12,12 +12,12 @@ Basic information needed to develop models will apear here.
 Every model in TCLB is defined by a subdirectory of `models`.
 The `conf.mk` file stores some additional settings for a model, but it also tells TCLB that this directory is in fact a model.
 
-#General information
+# General information
 
 Each model consit
 2 most important files: Dynamics.c and Dynamics.R, what goes where(logic, settings, quantities)
 
-#conf.mk
+# conf.mk
 
 ADJOINT = 1
 
@@ -55,7 +55,7 @@ or in pure C/C++, with:
 #endif
 ```
 
-#Dynamics.R
+# Dynamics.R
 
 In this file all 
 
@@ -63,6 +63,16 @@ In this file all
 ``` R
 AddField( name="Name", dx=c(-1,0), dy=c(0,0), dz=c(-1,1), comment='Some comment')
 ```
+
+If there is -1,1 access pattern you can use a shortcut:
+
+``` R
+AddField(name="u", dx=c(-1,1), dy=c(-1,1)) 
+# same as 
+AddField(name="u", stencil2d=1)
+``` 
+
+
 2. **AddDensity** - Variables loaded from `Fields` with a predefined offset: 
 ``` R
 AddDensity( name="Name", dx=1, dy=0, dz=0, comment='Some comment')
@@ -116,11 +126,33 @@ In order to extract those values the `GetName()` function must be defined in `Dy
 
 File structure, what are quantities, globals, etc, whats needed in (almost) every model
 
-#Dynamics.C
+
+
+**Stages**
+
+Stages are specific functions in `Dynamics.c`, for which we can define which `Densities` will be loaded and which `Fields` will be saved. Stages can be defined in `Dynamics.R` by:
+
+```R
+AddStage("BaseIteration", "Run", save=Fields$group == "f", load=DensityAll$group == "f")
+AddStage("CalcRho", save="rho", load=DensityAll$group == "f")
+AddStage("CalcNu", save="nu", load=FALSE)
+```
+
+**Action**  is a series of `Stages` executed in a order. For now there are two meaningful actions:
+
+- `Iteration`, which defines a single (primal) iteration
+- `Init`, which defines the initialization procedure in each node
+
+Actions can be defined in `Dynamics.R` by:
+```R
+AddAction("Iteration", c("BaseIteration","CalcRho","CalcNu"))
+```
+
+# Dynamics.C
 
 This file contains the actual 'logic' behind the model. All the calculations are done here. It must contain at least 3 functions to work: `Init()`, `Color()`, and `Run()`. Since CUDA architecture is being used, all the functions need to be preceded by "CudaDeviceFunction".
 
-###Init()
+### Init()
 
 Function called to initialise velocity in each node
 ```c
@@ -132,7 +164,7 @@ CudaDeviceFunction void Init() {
 }
 ```
 
-###Run()
+### Run()
 
 This function is called each iteration to perform calculations. It should contain instruction for each `NodeType` used in case. Its general structure looks like this:
 ```c
@@ -157,7 +189,7 @@ CudaDeviceFunction void Run(){
         .
 }
 ```
-###Color()
+### Color()
 
 This function is used to obtain preview during calculations, when not in use it can be only declared without any actual code inside.
 ```c
@@ -176,7 +208,7 @@ CudaDeviceFunction float2 Color() {
 
 
 
-###Get()
+### Get()
 
 In order to extract `Quantities` defined in `Dynamics.R` we must create function that will compute desired value. Depending on values of `vector` argument, the `Get()` function will be either `real_t` or `vector_t` type. Below are given examples for the `Quantities` used most often: 
 ```c
@@ -196,3 +228,4 @@ CudaDeviceFunction vector_t getU() {
         return u;
 }
 ```
+

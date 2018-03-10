@@ -127,7 +127,6 @@ Attribute       | Comment
 `x,y,z`         | Translates geometry along X/Y/Z axis  by given amount.  Distance can be specified in real-world units or number of grid points(without unit).
 `side`          | Chose if geometry will be treated as wall, possible arguments: `"in"`,`"out"` 
 
-
 ##Symmetry
 
 TODO:ustalić jak było z przesunięciem przy symetri, czy ma ona być na ostatnim elemencie ciała czy jedno za nim. 
