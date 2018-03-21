@@ -51,9 +51,10 @@ Element                                         | Functionality
 ------------------------------------------      | ---------------------------------------------------------------------------------
 `<?xml version="1.0"?>`                         | Header required for all case files.
 `<CLBConfig output="output/test">`              | All configuration settings must be contained within this element, additionally it is possible to specify deisred output path and/or filename prefix here. In example all files will be saved in `~TCLB/output` folder, with all the filenames begining with `test` prefix.
-`<Geometry nx="1024" ny="100">`                 | Element containing all informations regarding geometry(domain size/shape, whats insinde domain). `nx="1024"" ny="100"` specifies a domain containing 1024 elements in x-direction and 100 in y-direction. TODO: specyfikacja nx,dx,fx etc.
-`<MRT><Box/></MRT>`                             | `MRT` is 
-`<WVelocity name="Inlet"><Box nx="1"/></WVelocity>`   |Creates velocity inlet at western side of the domain(TODO: Orientation), with width equal to 1 element and assignes it name `Inlet`(usefull for specifying zonal parameters later on).
+`<Geometry nx="1024" ny="100">`                 | Element containing all informations regarding geometry(domain size/shape, whats insinde domain). `nx="1024"" ny="100"` specifies a domain containing 1024 elements in x-direction and 100 in y-direction.
+`<MRT><Box/></MRT>`                             | `MRT` stands for 'Multi-relaxation-time', it specifies 
+`<WVelocity name="Inlet"><Box nx="1"/></WVelocity>`   |Creates velocity inlet at western side of the domain, with width equal to 1 element and assignes it name `Inlet`(usefull for specifying zonal parameters later on).
+[//]: # (TODO: Orientation)
 `<EPressure><Box dx="-1"/></EPressure>`           | Creates pressure outlet at eastern side of the domain, with width equal to to 1 element.
 `<Wall mask = "ALL">` <br> `<Box ny="1"/>` <br> `<Box dy="-1"/>` <br> `</Wall>`  | Creates `wall` elements. `mask="ALL"` tells us that all types(also from other groups) will be overwritten by `wall` element type, e.g the collision enabled in `<MRT><Box/></MRT>` will be disabled.
 `</Geometry>`                                   | Closing tag for `<Geometry>` element.

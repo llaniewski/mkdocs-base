@@ -6,12 +6,13 @@ output: html_document
 ---
 #Example cases
 
-In this section, a few case files will be presented, along with notes on their structure and usage of most popular functions. All of them(and some others) can be found in `TCLB/examples` catalogue(TODO: powrzucać te przykłady).
+In this section, a few case files will be presented, along with notes on their structure and usage of most popular functions. All of them(and some others) can be found in `TCLB/examples` catalogue.
+[//]: # (TODO: powrzucać te przykłady)
 
 ##Simple case
 
-Below is presented a simple 3-Dimensional case, with a ball in the middle of the domain. Velocity inlet is used on one side and pressure outlet on the another one(TODO:Orientacja NEWS). Notice how each dimension of the ball is specified in different way, yet it is still placed exactly in the middle of the domain:
-
+Below is presented a simple 3-Dimensional case, with a ball in the middle of the domain. Velocity inlet is used on one side and pressure outlet on the another one. Notice how each dimension of the ball is specified in different way, yet it is still placed exactly in the middle of the domain:
+[//]: # (TODO: orientacja NEWS)
 ```xml
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/test">
@@ -95,14 +96,14 @@ Changes `Velocity` according to the contents of `file.csv`. Here column 'x' is u
 
 ##Importing geometry
 
-It is possible to import geometry from `.stl` files. It can be done by using `<STL file="path_to_file"/>`. Additional arguments allow user to resize, rotate, and translate geometry. ParaView(TODO: podlinkować odpowiedni podrozdział) can open `.stl` files and provides a fast way of estabilishing correct import parameters. Imported geometry can be used along with geometry primitives, shown in other examples.
+It is possible to import geometry from `.stl` files. It can be done by using `<STL file="path_to_file"/>`. Additional arguments allow user to resize, rotate, and translate geometry. [ParaView can open `.stl` files](/4.-Post-processing/paraview) and provides a fast way of estabilishing correct import parameters. Imported geometry can be used along with geometry primitives, shown in other examples.
 
 ```xml
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/">
         <Units>
                 <Params size="1m" gauge="70" />
-                <Params nu="1.4e-5m2/s" gauge="0.0001"/>  (TODO: nie działa jak usunie wpisze się w jednym <Params/> - dlaczego?)
+                <Params nu="1.4e-5m2/s" gauge="0.0001"/>
         </Units>
         <Geometry nx="6m" ny="1m" nz="1m">
                 <MRT><Box/></MRT>
@@ -125,15 +126,15 @@ Attribute       | Comment
 `scale`         | Used to resize `.stl` file, can be specified with units, or as a fraction(e.g. 1/100).
 `Xrot,Yrot,Zrot`| Rotates geometry aroun X/Y/Z axis by given amount in degrees.
 `x,y,z`         | Translates geometry along X/Y/Z axis  by given amount.  Distance can be specified in real-world units or number of grid points(without unit).
-`side`          | Chose if geometry will be treated as wall, possible arguments: `"in"`,`"out"` 
+`side`          | Chose if geometry will be treated as wall, possible arguments: `"in"`,`"out"`, '"surface"'.
 
 ##Symmetry
 
-TODO:ustalić jak było z przesunięciem przy symetri, czy ma ona być na ostatnim elemencie ciała czy jedno za nim. 
+[//]: # (TODO:ustalić jak było z przesunięciem przy symetri, czy ma ona być na ostatnim elemencie ciała czy jedno za nim)
 
 ##Synthetic Turbulence
 
-A synthetic turbulence generator is implemented in TCLB solver. It is based on modified von Karman-Pao spectrum([Bailly and Juve, 1999](https://arc.aiaa.org/doi/10.2514/6.1999-1872)) 
+A synthetic turbulence generator is implemented in TCLB solver. It is based on modified von Karman-Pao spectrum([Bailly and Juve, 1999](https://arc.aiaa.org/doi/10.2514/6.1999-1872)).
 ```xml
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/test">
@@ -166,12 +167,12 @@ It is important to remember that in order to use implemented turbulence generato
 
 Attribute              | Comment 
 ---------------------- | ----------------------------------------------------------- 
-`Modes`                | Number of harmonic modes to generate for the turbulence, default '100'.
+`Modes`                | Number of harmonic modes to generate for the turbulence, default is '100'.
 `Spread`               | The way to divide the spectrum to a finite number of modes. Possible values: `Even`, `Log`, `Quantile`. Default is `Even`.
 `Spectrum`             | Type of spectrum to use, possible values: `Von Karman`, `One Wave`. Default is `Von Karman`.
 `MainWaveLength`       | Main wave-length in the Von Karman spectrum.
 `DiffusionWaveLength`  | Diffusion scale wave-length in the Von Karman spectrum.
-`MinWaveLength`        | Minimal space wave-length. TODO:Default value
+`MinWaveLength`        | Minimal space wave-length.
 `MaxWaveLength`        | Maximal space wave-length.
 `TimeWaveLength`       | Time wave-length of the syntetic turbulence.
  

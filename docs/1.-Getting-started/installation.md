@@ -44,4 +44,5 @@ make configure
 ./configure
 make -j 10 d2q9
 ```
-Notes: `-j 10` is used to speed up the compilation process, by running multiple threads. `d2q9` is the name of the model, this solver comes with multiple models(TODO:link), which can be compiled(and used) by substituting `d2q9` for desired model name(e.g. `d3q27`).
+Notes: `-j 10` is used to speed up the compilation process, by running multiple threads. `d2q9` is the name of the model, this solver comes with multiple models, which can be compiled(and used) by substituting `d2q9` for desired model name(e.g. `d3q27`).
+[//]: # (TODO:link to models?)

@@ -4,7 +4,7 @@ author: Paweł Obrępalski
 date: "July 4, 2017"
 output: html_document
 ---
-TODO: Dodać rozwiązane tutoriale, sprawdzić by działało wszystko.
+[//]: # (TODO: Dodać rozwiązane tutoriale, sprawdzić by działało wszystko.)
 
 
 Basic information needed to develop models will apear here. 

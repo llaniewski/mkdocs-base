@@ -26,4 +26,4 @@ mpirun -np X CLB/MODEL_NAME/main case_path
 ```
 Where `X` is number of threads that will be created. Usually max number of threads is equal to number of cores of a processor, with the exception of CPUs with multi-threading.
 
-TODO: Może też coś o tym jak odpalać obliczenia na klastrze?(instrukcja z wiki github)
+[//]: # (TODO: Może też coś o tym jak odpalać obliczenia na klastrze?(instrukcja z wiki github))
