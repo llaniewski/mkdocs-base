@@ -9,7 +9,7 @@ The TCLB code is a parallel Lattice Boltzmann Method solver, able to run on mult
 cluster architectures.
 
 For a quick start, please refer to the [Getting Started
-guide](/1.-getting-started/).
+guide](/1.-getting-started/installation/).
 
 Detailed descriptions of configuration of the code and compilation, can be
 found in the "Installation" part of this manual. The "Running simulations"

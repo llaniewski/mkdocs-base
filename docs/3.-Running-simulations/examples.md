@@ -6,7 +6,7 @@ output: html_document
 ---
 #Example cases
 
-In this section, a few case files will be presented, along with notes on their structure and usage of most popular functions. All of them(and some others) can be found in `TCLB/examples` catalogue.
+In this section, a few case files will be presented, along with notes on their structure and usage of most popular functions. All of them (and some others) can be found in `TCLB/examples` catalogue.
 [//]: # (TODO: powrzucać te przykłady)
 
 ##Simple case
@@ -96,7 +96,9 @@ Changes `Velocity` according to the contents of `file.csv`. Here column 'x' is u
 
 ##Importing geometry
 
-It is possible to import geometry from `.stl` files. It can be done by using `<STL file="path_to_file"/>`. Additional arguments allow user to resize, rotate, and translate geometry. [ParaView can open `.stl` files](/4.-Post-processing/paraview) and provides a fast way of estabilishing correct import parameters. Imported geometry can be used along with geometry primitives, shown in other examples.
+It is possible to import geometry from `.stl` files. It can be done by using `<STL file="path_to_file"/>`. Additional arguments allow user to resize, rotate, and translate geometry. [ParaView can open `.stl` files](/4.-Post-processing/paraview) and provides a fast way of estabilishing correct import parameters. Imported geometry can be used along with geometry primitives, shown in other examples. 
+
+Note: Only STL files in binary format are currently supported.
 
 ```xml
 <?xml version="1.0"?>
@@ -125,7 +127,7 @@ Attribute       | Comment
 ----------      | ---------------------------------------------------------------------------------------------------------------------------------------------------
 `scale`         | Used to resize `.stl` file, can be specified with units, or as a fraction(e.g. 1/100).
 `Xrot,Yrot,Zrot`| Rotates geometry aroun X/Y/Z axis by given amount in degrees.
-`x,y,z`         | Translates geometry along X/Y/Z axis  by given amount.  Distance can be specified in real-world units or number of grid points(without unit).
+`x,y,z`         | Translates geometry along X/Y/Z axis  by given amount.  Distance can be specified in real-world units or number of grid points (without unit).
 `side`          | Chose if geometry will be treated as wall, possible arguments: `"in"`,`"out"`, '"surface"'.
 
 ##Symmetry
@@ -134,7 +136,7 @@ Attribute       | Comment
 
 ##Synthetic Turbulence
 
-A synthetic turbulence generator is implemented in TCLB solver. It is based on modified von Karman-Pao spectrum([Bailly and Juve, 1999](https://arc.aiaa.org/doi/10.2514/6.1999-1872)).
+A synthetic turbulence generator is implemented in TCLB solver. It is based on modified von Karman-Pao spectrum ([Bailly and Juve, 1999](https://arc.aiaa.org/doi/10.2514/6.1999-1872)).
 ```xml
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/test">
