@@ -5,8 +5,8 @@ d2q9_plate
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 55c8268)/src/d2q9_plate/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 55c8268)/src/d2q9_plate/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 6d7619d)/src/d2q9_plate/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 6d7619d)/src/d2q9_plate/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -56,14 +56,14 @@ d2q9_plate
 
 | Name | [Unit](Units) | Comment |
 | --- | --- | --- |
-|`ForceX`|`1`|reaction force X|
-|`ForceY`|`1`|reaction force Y|
-|`Moment`|`1`|reaction force X|
-|`PowerX`|`1`|reaction force Y|
-|`PowerY`|`1`|reaction force X|
-|`PowerR`|`1`|reaction force Y|
-|`Power`|`1`|reaction force X|
-|`Power2`|`1`|reaction force Y|
+|`ForceX`|`N/m`|reaction force X|
+|`ForceY`|`N/m`|reaction force Y|
+|`Moment`|`N`|reaction force X|
+|`PowerX`|`W/m`|reaction force Y|
+|`PowerY`|`W/m`|reaction force X|
+|`PowerR`|`W/m`|reaction force Y|
+|`Power`|`W/m`|reaction force X|
+|`Power2`|`W/m`|reaction force Y|
 |`tau0_D`|`1`|Gradient of objective with respect to [one over relaxation time]|
 |`nu_D`|`1`|Gradient of objective with respect to [viscosity]|
 |`Smag_D`|`1`|Gradient of objective with respect to [inlet density]|
@@ -82,7 +82,6 @@ d2q9_plate
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
-|OBJECTIVE|Inlet, Outlet|
 |SETTINGZONE|DefaultZone|
 
 ### [Solved fields](Fields)
