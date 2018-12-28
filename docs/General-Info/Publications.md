@@ -1,9 +1,12 @@
-## Computing Power Grants
+---
+title: Publications
+author: "Łukasz Łaniewski-Wołłk"
+date: "2018"
+---
 
-### PL-GRID infrastrucure:
-clb, clb2, clb3, clb2016, clb2017, clb2018
+# Publications
 
-## Publications:
+## Scientific Journal Publications
 
 - [Ł. Łaniewski-Wołłk, J. Rokicki, *Adjoint Lattice Boltzmann for topology optimization on multi-GPU architecture*, Computers & Mathematics with Applications](https://doi.org/10.1016/j.camwa.2015.12.043)
 - [W. Regulski, J. Szumbarski, Ł. Łaniewski-Wołłk, K. Gumowski, J. Skibiński, M. Wichrowski, T. Wejrzanowski, *Pressure drop in flow across ceramic foams—A numerical and experimental study*, Chemical Engineering Science](https://doi.org/10.1016/j.ces.2015.06.043)
@@ -24,3 +27,13 @@ clb, clb2, clb3, clb2016, clb2017, clb2018
 - P. Obrępalski, *Simulation of car aerodynamics using Lattice Boltzmann method* (promotor: Ł. Łaniewski-Wołłk)
 - D. Sashko, *Simulation of turbulent flows with cummulant Lattice-Boltzman method* (promotor: Ł. Łaniewski-Wołłk)
 
+# Grants and Funding
+
+## Research Projects in which TCLB was used
+
+## Computing Power Grants
+
+### PL-GRID infrastrucure (PL)
+TCLB was actively developed and extended on the infrastructure of Cyfronet, in the grants: `clb`, `clb2`, `clb3`, `clb2016`, `clb2017`, `clb2018`
+
+### PAWSEY infrastructure (AU)
