@@ -22,17 +22,19 @@ Such algorithms perform much better in the cases with a high number of parameter
 (which is the case both in Topology Optimization, and Open Loop Optimal Control).
 
 In any gradient-based optimization done with an Adjoint code, there are three things to separate:
+
 - **Primal** - The primal problem to solve (in our case it can be CFD done with LBM)
 - **Adjoint** - The adjoint problem, which calculates the sensitivities of the objective to all variables in the code (including the design parameters)
 - **Optimziation Algorithm** - The algorithm which takes the gradient information and uses it to change the desing variables to achieve the best value of the objective function.
 
 For the second end third thing to work, we need two things to be defined:
+
 - **Objective function**
 - The set of **design parameters** (together with bonds on them)
 
 To understand the mechanisms of sensitivity propagation in TCLB, we can divide adjoint
 computations into two types: **steady** and **unsteady**. If the Primal problem has a stationary
-solution $x$, this means that $x$ is a solution to a fixed point iteration $x=f(x)$.
+solution \(x\), this means that \(x\) is a solution to a fixed point iteration \(x=f(x)\).
 This in turn means that the Adjoint problem can be similarly formulated as a fixed point
 problem. This makes solving it much simpler, and allows us to iterate it in a simple way.
 On the other hand we have usteady Primal problems. By them we mean solutions in which the
