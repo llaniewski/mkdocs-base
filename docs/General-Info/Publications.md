@@ -41,3 +41,4 @@ date: "2018"
 TCLB was actively developed and extended on the infrastructure of Cyfronet, in the grants: `clb`, `clb2`, `clb3`, `clb2016`, `clb2017`, `clb2018`
 
 ### PAWSEY infrastructure (AU)
+TCLB was developed and tuned for the Cray architecture as part of computing power grants awarded to the team of Christopher Leonardi (UQ).
