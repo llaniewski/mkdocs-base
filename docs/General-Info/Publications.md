@@ -16,11 +16,15 @@ date: "2018"
 ## PhD Thesis:
 
 ### WUT
-- M. Dzikowski, *Wykorzystanie metody gazu sieciowego Boltzmanna do symulacji przepływów dwufazowych* (promotor: J. Rokicki)
-- Ł. Łaniewski-Wołłk, *Topology Optimization and Optimal Control using Adjoint Lattice Boltzmann Method* (promotor: J. Rokicki)
-- W. Regulski, *...*
+- [M. Dzikowski, *Wykorzystanie metody gazu sieciowego Boltzmanna do symulacji przepływów dwufazowych* (promotor: J. Rokicki)   ](http://repo.bg.pw.edu.pl/index.php/en/r#/info/phd/WUT6bac819043d54c539fac767d2a456032/)
+- [Ł. Łaniewski-Wołłk, *Topology Optimization and Optimal Control using Adjoint Lattice Boltzmann Method* (promotor: J. Rokicki)](http://repo.bg.pw.edu.pl/index.php/en/r#/info/phd/WUT698b95ed1f0d44bd8df138a37640f8e6/)
+- W. Regulski, *Investigation of hydrodynamic properties of structures with open porosity using the Lattice Boltzmann Method* (promotor: J. Szumbarski)
+
+### UQ
+- J. McCullough *Numerical investigation of conjugate heat transfer and temperature-dependent viscosity in non-Brownian suspensions with application to hydraulic fracturing* (supervisor: C. Leonardi)
 
 ## MsC and Eng Works:
+
 ### WUT
 - T. Gajek, *Symulacja komputerowa przepływu przez górne drogi oddechowe metodą Lattice Boltzmann* (promotor: J. Szumbarski)
 - G. Gruszczyński, *Optimal Control using the Adjoint Lattice Boltzmann Method* (promotor: J. Szumbarski)
