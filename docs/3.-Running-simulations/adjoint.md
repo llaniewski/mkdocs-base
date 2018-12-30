@@ -2,7 +2,6 @@
 title: Adjoint
 author: "Łukasz Łaniewski-Wołłk"
 date: "2018"
-edit_url: "https://github.com/CFD-GO/TCLB_docs/edit/master/docs/3.-Running-simulations/adjoint.md"
 ---
 
 # Adjoint
