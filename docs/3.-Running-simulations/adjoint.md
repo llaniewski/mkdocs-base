@@ -61,7 +61,7 @@ the latter type of adjoint is much more computationally challenging.
 ## Unsteady Adjoint
 
 ```xml
-<Adjoint type="unsteady">
+<Adjoint type="unsteady" NumberOfSnaps="14">
   <Solve Iterations="1000"/>
 </Adjoint>
 ```
@@ -77,7 +77,15 @@ the latter type of adjoint is much more computationally challenging.
 ## Optimal Control
 
 ```xml
-<OptimalControl/>
+<OptimalControl what="MovingWallVelocity-DefaultZone" lower="-0.1" upper="0.1"/>
+```
+
+### Reducing the dimensionality of the parameter space
+
+```xml
+<BSpline order="4" nodes="10">
+   <OptimalControl what="MovingWallVelocity-DefaultZone" lower="-0.1" upper="0.1"/>
+</BSpline>
 ```
 
 # Optimization
