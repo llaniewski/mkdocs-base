@@ -47,10 +47,46 @@ the latter type of adjoint is much more computationally challenging.
 
 ## Steady Adjoint
 
+```xml
+<Adjoint Iterations="1000" type="steady"/>
+```
+
 ### One-shot Optimization
+
+```xml
+<Params Descent="0.1"/>
+<OptSolve Iterations="1000"/>
+```
 
 ## Unsteady Adjoint
 
+```xml
+<Adjoint type="unsteady">
+  <Solve Iterations="1000"/>
+</Adjoint>
+```
+
 # Defining parameters
 
+## Field Parameter
+
+```xml
+<FieldParameter/>
+```
+
+## Optimal Control
+
+```xml
+<OptimalControl/>
+```
+
 # Optimization
+
+```xml
+<Optimize method="MMA" MaxEvaluations="10">
+  <Adjoint type="unsteady">
+    <Solve Iterations="1000"/>
+  </Adjoint>
+</Optimize>
+```
+
