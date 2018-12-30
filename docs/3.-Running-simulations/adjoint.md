@@ -71,7 +71,7 @@ the latter type of adjoint is much more computationally challenging.
 ## Field Parameter
 
 ```xml
-<FieldParameter/>
+<FieldParameter field="w" where="DesignSpace"/>
 ```
 
 ## Optimal Control
