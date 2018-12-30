@@ -6,7 +6,7 @@ theme:
   name: 'material'
 repo_name: CFD-GO/TCLB
 repo_url: https://github.com/CFD-GO/TCLB
-edit_uri: ""
+edit_uri: "https://github.com/CFD-GO/TCLB_docs/edit/master/"
 
 markdown_extensions:
     - fenced_code
