@@ -29,8 +29,8 @@ In any gradient-based optimization done with an Adjoint code, there are three th
 
 For the second end third thing to work, we need two things to be defined:
 
-- **Objective function**
-- The set of **design parameters** (together with bonds on them)
+- **Objective function** -- let's call it \(J\)
+- The set of **design parameters** (together with bonds on them) -- let's call them \(\alpha\)
 
 To understand the mechanisms of sensitivity propagation in TCLB, we can divide adjoint
 computations into two types: **steady** and **unsteady**. If the Primal problem has a stationary
@@ -45,13 +45,25 @@ the latter type of adjoint is much more computationally challenging.
 
 # Setting up Adjoint Calculations
 
+The need for Adjoint calculation have to be declared in the xml configuration of the computation case. As we mentioned earlier, adjoint is a method of propagation of sensitivity, so we need first to define the objective function. In TCLB we declare the objective as a combination of Globals. For each Global (e.g. Flux) we have a Setting (e.g. FluxInObj), which controls what is the weight of said Global (e.g. Flux) in the overall objective. For instance we can set:
+
+```xml
+<Params FluxInObj="1.0"/> <Params HeatInObj="-2.0"/>
+```
+
+this will mean that: `Objective=Flux-2*Heat`. When we have a objective defined we can run the adjoint calculation.
+
 ## Steady Adjoint
 
+Steady Adjoint calculation is a process of iterating the adjoint fixed point problem. You can request it with:
 ```xml
 <Adjoint Iterations="1000" type="steady"/>
 ```
+This should be done only after converging the primal problem. Otherwise the results would not be representative.
 
 ### One-shot Optimization
+
+For steady adjoint we can run an additional type of calculation. It is what sometimes is called *one-shot* optimization. Each run of this approach make one iteration of primal solution, one iteration of the adjoint, and one iteration of a simple optimization algorithm. This allows for simultanious convergence of Primal and Adjoint problems, and optimization. *This is implemented only for topology optimization.* The optimization algorithm is the simplest steepest descent approach, moving the parameters in the direction of the gradient by a specific small coeficient. In each iteration parameters \(\alpha\) is moved by \(\zeta\nabla_\alpha J\), where \(\zeta\) (`Descent`) is the speed of change. The one-shot optimization can be run with:
 
 ```xml
 <Params Descent="0.1"/>
