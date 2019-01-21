@@ -5,8 +5,8 @@ d3q19_heat_adj_art
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 55c8268)/src/d3q19_heat_adj_art/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 55c8268)/src/d3q19_heat_adj_art/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at be299aa)/src/d3q19_heat_adj_art/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at be299aa)/src/d3q19_heat_adj_art/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -16,6 +16,7 @@ d3q19_heat_adj_art
 |`Pressure`|inlet pressure|
 |`Temperature`|inlet density|
 |`LimitTemperature`|inlet density|
+|`HeatInputInObj`|Weight of [Flux of heat into heater] in objective|
 |`HeatFluxInObj`|Weight of [Flux of heat] in objective|
 |`HeatSquareFluxInObj`|Weight of [Flux of temperature squered] in objective|
 |`FluxInObj`|Weight of [Volume flux] in objective|
@@ -53,6 +54,7 @@ d3q19_heat_adj_art
 
 | Name | [Unit](Units) | Comment |
 | --- | --- | --- |
+|`HeatInput`|`Km3/s`|Flux of heat into heater|
 |`HeatFlux`|`Km3/s`|Flux of heat|
 |`HeatSquareFlux`|`K2m3/s`|Flux of temperature squered|
 |`Flux`|`m3/s`|Volume flux|
@@ -78,7 +80,7 @@ d3q19_heat_adj_art
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
-|OBJECTIVE|Inlet, Outlet, Thermometer|
+|OBJECTIVE|Thermometer, Inlet, Outlet|
 |SETTINGZONE|DefaultZone|
 
 ### [Solved fields](Fields)

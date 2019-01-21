@@ -5,8 +5,8 @@ d3q27_cumulant_IB
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 55c8268)/src/d3q27_cumulant_IB/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 55c8268)/src/d3q27_cumulant_IB/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at be299aa)/src/d3q27_cumulant_IB/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at be299aa)/src/d3q27_cumulant_IB/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -31,7 +31,6 @@ d3q27_cumulant_IB
 |`ForceX`||Force force X|
 |`ForceY`||Force force Y|
 |`ForceZ`||Force force Z|
-|`Smag`||Smagorinsky coefficient for SGS modeling|
 |`Omega`||relaxation rate for 3rd order cumulants|
 |`Threshold`||Parameters threshold|
 
@@ -58,12 +57,11 @@ d3q27_cumulant_IB
 | --- | --- |
 |ADDITIONALS|NSymmetry, SSymmetry|
 |BODY|Body|
-|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, WVelocityTurbulent, NVelocity, SVelocity, NPressure, SPressure|
+|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, Buffer, WVelocityTurbulent, NVelocity, SVelocity, NPressure, SPressure|
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |HO_BOUNDARY|IB|
 |NONE|None|
-|OBJECTIVE|Inlet, Outlet|
 |SETTINGZONE|DefaultZone|
 
 ### [Solved fields](Fields)
