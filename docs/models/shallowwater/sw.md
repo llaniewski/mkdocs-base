@@ -10,8 +10,8 @@ Model has adjoint capabilities for unsteady optimization.
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at be299aa)/src/sw/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at be299aa)/src/sw/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at a97178f)/src/sw/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at a97178f)/src/sw/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
