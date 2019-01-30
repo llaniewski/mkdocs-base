@@ -5,8 +5,8 @@ The 'd2q9_pf_velocity' model is a multiphase 2D(planar) lattice Boltzmann model 
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at a97178f)/src/d2q9_pf_velocity_Outflow/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at a97178f)/src/d2q9_pf_velocity_Outflow/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d2q9_pf_velocity_Outflow/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d2q9_pf_velocity_Outflow/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -82,7 +82,7 @@ The 'd2q9_pf_velocity' model is a multiphase 2D(planar) lattice Boltzmann model 
 | Group | Types |
 | --- | --- |
 |ADDITIONALS|SpikeTrack, BubbleTrack|
-|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, MovingWall_N, MovingWall_S, NVelocity, SVelocity, NPressure, SPressure, Convective_E, Convective_N, Neumann_E|
+|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, MovingWall_N, MovingWall_S, Convective_E, Neumann_E|
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
@@ -92,46 +92,46 @@ The 'd2q9_pf_velocity' model is a multiphase 2D(planar) lattice Boltzmann model 
 
 | Name | Access pattern | Comment |
 | --- | --- | --- |
-|`g[0]`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|g[0]|
-|`g[1]`|![stencil](/images/st_a2n2n1p0n1p0p0.png)|g[1]|
-|`g[2]`|![stencil](/images/st_a2n1n2p0p0n1p0.png)|g[2]|
-|`g[3]`|![stencil](/images/st_a2p0n1p0p1p0p0.png)|g[3]|
-|`g[4]`|![stencil](/images/st_a2n1p0p0p0p1p0.png)|g[4]|
-|`g[5]`|![stencil](/images/st_a2n2n2p0n1n1p0.png)|g[5]|
-|`g[6]`|![stencil](/images/st_a2p0n2p0p1n1p0.png)|g[6]|
-|`g[7]`|![stencil](/images/st_a2p0p0p0p1p1p0.png)|g[7]|
-|`g[8]`|![stencil](/images/st_a2n2p0p0n1p1p0.png)|g[8]|
-|`h[0]`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|h[0]|
-|`h[1]`|![stencil](/images/st_a2n2n1p0n1p0p0.png)|h[1]|
-|`h[2]`|![stencil](/images/st_a2n1n2p0p0n1p0.png)|h[2]|
-|`h[3]`|![stencil](/images/st_a2p0n1p0p1p0p0.png)|h[3]|
-|`h[4]`|![stencil](/images/st_a2n1p0p0p0p1p0.png)|h[4]|
-|`h[5]`|![stencil](/images/st_a2n2n2p0n1n1p0.png)|h[5]|
-|`h[6]`|![stencil](/images/st_a2p0n2p0p1n1p0.png)|h[6]|
-|`h[7]`|![stencil](/images/st_a2p0p0p0p1p1p0.png)|h[7]|
-|`h[8]`|![stencil](/images/st_a2n2p0p0n1p1p0.png)|h[8]|
-|`gold0`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold1`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold2`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold3`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold4`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold5`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold6`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold7`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`gold8`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|gold0|
-|`hold0`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold1`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold2`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold3`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold4`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold5`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold6`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold7`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`hold8`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|hold0|
-|`nw_x`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|nw_x|
-|`nw_y`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|nw_y|
-|`U`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|U|
-|`V`|![stencil](/images/st_a2n1n1p0p0p0p0.png)|V|
+|`g[0]`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|g[0]|
+|`g[1]`|![stencil](/images/st_a2n2p0p0n1p0p0.png)|g[1]|
+|`g[2]`|![stencil](/images/st_a2n1n1p0p0n1p0.png)|g[2]|
+|`g[3]`|![stencil](/images/st_a2p0p0p0p1p0p0.png)|g[3]|
+|`g[4]`|![stencil](/images/st_a2n1p1p0p0p1p0.png)|g[4]|
+|`g[5]`|![stencil](/images/st_a2n2n1p0n1n1p0.png)|g[5]|
+|`g[6]`|![stencil](/images/st_a2p0n1p0p1n1p0.png)|g[6]|
+|`g[7]`|![stencil](/images/st_a2p0p1p0p1p1p0.png)|g[7]|
+|`g[8]`|![stencil](/images/st_a2n2p1p0n1p1p0.png)|g[8]|
+|`h[0]`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|h[0]|
+|`h[1]`|![stencil](/images/st_a2n2p0p0n1p0p0.png)|h[1]|
+|`h[2]`|![stencil](/images/st_a2n1n1p0p0n1p0.png)|h[2]|
+|`h[3]`|![stencil](/images/st_a2p0p0p0p1p0p0.png)|h[3]|
+|`h[4]`|![stencil](/images/st_a2n1p1p0p0p1p0.png)|h[4]|
+|`h[5]`|![stencil](/images/st_a2n2n1p0n1n1p0.png)|h[5]|
+|`h[6]`|![stencil](/images/st_a2p0n1p0p1n1p0.png)|h[6]|
+|`h[7]`|![stencil](/images/st_a2p0p1p0p1p1p0.png)|h[7]|
+|`h[8]`|![stencil](/images/st_a2n2p1p0n1p1p0.png)|h[8]|
+|`gold0`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold1`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold2`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold3`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold4`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold5`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold6`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold7`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`gold8`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|gold0|
+|`hold0`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold1`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold2`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold3`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold4`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold5`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold6`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold7`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`hold8`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|hold0|
+|`nw_x`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|nw_x|
+|`nw_y`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|nw_y|
+|`U`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|U|
+|`V`|![stencil](/images/st_a2n1p0p0p0p0p0.png)|V|
 |`PhaseF`|![stencil](/images/st_a2n1n1p0p1p1p0.png)|PhaseF|
 
 ### [Densities - default accessors](Densities)

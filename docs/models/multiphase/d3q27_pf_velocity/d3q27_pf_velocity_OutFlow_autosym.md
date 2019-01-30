@@ -5,8 +5,8 @@ The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at a97178f)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at a97178f)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -27,12 +27,6 @@ The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the
 |`OutletFluxInObj`|Weight of [pressure loss] in objective|
 |`InletFluxInObj`|Weight of [pressure loss] in objective|
 |`TotalDensityInObj`|Weight of [Mass conservation check] in objective|
-|`KineticEnergyInObj`|Weight of [Measure of kinetic energy] in objective|
-|`GasTotalVelocityInObj`|Weight of [use to determine avg velocity of bubbles] in objective|
-|`GasTotalVelocityXInObj`|Weight of [use to determine avg velocity of bubbles] in objective|
-|`GasTotalVelocityYInObj`|Weight of [use to determine avg velocity of bubbles] in objective|
-|`GasTotalVelocityZInObj`|Weight of [use to determine avg velocity of bubbles] in objective|
-|`GasCellsInObj`|Weight of [use in line with GasTotalVelocity to determine average velocity] in objective|
 
 
 ### [Global Settings](Settings)
@@ -54,11 +48,7 @@ The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the
 |`CenterX`||Diffuse sphere center_x|
 |`CenterY`||Diffuse sphere center_y|
 |`CenterZ`||Diffuse sphere center_z|
-|`BubbleType`||droplet(1.0) or bubble(-1.0)?!|
-|`DonutTime`||Radius of a Torus - initialised to travel along x-axis|
-|`Donut_h`||Half donut thickness, i.e. the radius of the cross-section|
-|`Donut_D`||Dilation factor along the x-axis|
-|`Donut_x0`||Position along x-axis|
+|`BubbleType`||droplet or bubble?!|
 |`tau_l`|(3*Viscosity_l)|relaxation time (low density fluid)|
 |`tau_h`|(3*Viscosity_h)|relaxation time (high density fluid)|
 |`Viscosity_l`||kinematic viscosity|
@@ -66,17 +56,15 @@ The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the
 |`GravitationX`||applied (rho)*GravitationX|
 |`GravitationY`||applied (rho)*GravitationY|
 |`GravitationZ`||applied (rho)*GravitationZ|
-|`BuoyancyX`||applied (rho_h-rho)*BuoyancyX|
-|`BuoyancyY`||applied (rho_h-rho)*BuoyancyY|
-|`BuoyancyZ`||applied (rho_h-rho)*BuoyancyZ|
-|`xyzTrack`||x<-1, y<-2, z<-3|
+|`BuoyancyX`||applied (rho-rho_h)*BuoyancyX|
+|`BuoyancyY`||applied (rho-rho_h)*BuoyancyY|
+|`BuoyancyZ`||applied (rho-rho_h)*BuoyancyZ|
 |`Threshold`||Parameters threshold|
 
 ### [Exported Quantities](Quantities) (VTK, etc)
 
 | Name | [Unit](Units) | Comment |
 | --- | --- | --- |
-|`Rho`|`kg/m3`|Rho|
 |`PhaseField`|`1`|PhaseField|
 |`U`|`m/s`|U|
 |`P`|`Pa`|P|
@@ -96,20 +84,14 @@ The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the
 |`OutletFlux`|`1m2/s`|pressure loss|
 |`InletFlux`|`1m2/s`|pressure loss|
 |`TotalDensity`|`1kg/m3`|Mass conservation check|
-|`KineticEnergy`|`J`|Measure of kinetic energy|
-|`GasTotalVelocity`|`m/s`|use to determine avg velocity of bubbles|
-|`GasTotalVelocityX`|`m/s`|use to determine avg velocity of bubbles|
-|`GasTotalVelocityY`|`m/s`|use to determine avg velocity of bubbles|
-|`GasTotalVelocityZ`|`m/s`|use to determine avg velocity of bubbles|
-|`GasCells`|`1`|use in line with GasTotalVelocity to determine average velocity|
 |`Objective`|`1`|Objective function|
 
 ### [Node Types](Node-Types)
 
 | Group | Types |
 | --- | --- |
-|ADDITIONALS|Centerline, Smoothing, Spiketrack, Saddletrack, Bubbletrack|
-|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, MovingWall_N, MovingWall_S, NVelocity, ENeumann, EConvect|
+|ADDITIONALS|Centerline, Spiketrack, Saddletrack, Bubbletrack|
+|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, MovingWall_N, MovingWall_S, ENeumann, EConvect|
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
@@ -314,10 +296,10 @@ The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the
 | Name | Main procedure | Preloaded densities | Pushed fields |
 | --- | --- | --- | --- |
 |PhaseInit|Init|_none_|PhaseF|
+|BaseInit|Init_distributions|_none_|g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, gold0, gold1, gold2, gold3, gold4, gold5, gold6, gold7, gold8, gold9, gold10, gold11, gold12, gold13, gold14, gold15, gold16, gold17, gold18, gold19, gold20, gold21, gold22, gold23, gold24, gold25, gold26, hold0, hold1, hold2, hold3, hold4, hold5, hold6, hold7, hold8, hold9, hold10, hold11, hold12, hold13, hold14, U, V, W|
 |WallInit|Init_wallNorm|_none_|nw_x, nw_y, nw_z|
 |calcWall|calcWallPhase|nw_x, nw_y, nw_z|PhaseF|
-|BaseInit|Init_distributions|_none_|g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, gold0, gold1, gold2, gold3, gold4, gold5, gold6, gold7, gold8, gold9, gold10, gold11, gold12, gold13, gold14, gold15, gold16, gold17, gold18, gold19, gold20, gold21, gold22, gold23, gold24, gold25, gold26, hold0, hold1, hold2, hold3, hold4, hold5, hold6, hold7, hold8, hold9, hold10, hold11, hold12, hold13, hold14, U, V, W, PhaseF|
-|calcPhase|calcPhaseF|g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, gold0, gold1, gold2, gold3, gold4, gold5, gold6, gold7, gold8, gold9, gold10, gold11, gold12, gold13, gold14, gold15, gold16, gold17, gold18, gold19, gold20, gold21, gold22, gold23, gold24, gold25, gold26, hold0, hold1, hold2, hold3, hold4, hold5, hold6, hold7, hold8, hold9, hold10, hold11, hold12, hold13, hold14, U, V, W, nw_x, nw_y, nw_z|PhaseF|
+|calcPhase|calcPhaseF|g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, gold0, gold1, gold2, gold3, gold4, gold5, gold6, gold7, gold8, gold9, gold10, gold11, gold12, gold13, gold14, gold15, gold16, gold17, gold18, gold19, gold20, gold21, gold22, gold23, gold24, gold25, gold26, hold0, hold1, hold2, hold3, hold4, hold5, hold6, hold7, hold8, hold9, hold10, hold11, hold12, hold13, hold14|PhaseF|
 |BaseIter|Run|g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, gold0, gold1, gold2, gold3, gold4, gold5, gold6, gold7, gold8, gold9, gold10, gold11, gold12, gold13, gold14, gold15, gold16, gold17, gold18, gold19, gold20, gold21, gold22, gold23, gold24, gold25, gold26, hold0, hold1, hold2, hold3, hold4, hold5, hold6, hold7, hold8, hold9, hold10, hold11, hold12, hold13, hold14, U, V, W, nw_x, nw_y, nw_z|g0, g1, g2, g3, g4, g5, g6, g7, g8, g9, g10, g11, g12, g13, g14, g15, g16, g17, g18, g19, g20, g21, g22, g23, g24, g25, g26, h0, h1, h2, h3, h4, h5, h6, h7, h8, h9, h10, h11, h12, h13, h14, gold0, gold1, gold2, gold3, gold4, gold5, gold6, gold7, gold8, gold9, gold10, gold11, gold12, gold13, gold14, gold15, gold16, gold17, gold18, gold19, gold20, gold21, gold22, gold23, gold24, gold25, gold26, hold0, hold1, hold2, hold3, hold4, hold5, hold6, hold7, hold8, hold9, hold10, hold11, hold12, hold13, hold14, U, V, W, nw_x, nw_y, nw_z|
 
 
