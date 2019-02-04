@@ -5,8 +5,8 @@ d2q9_optimalMixing
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_optimalMixing/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_optimalMixing/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at e32ce3f)/src/d2q9_optimalMixing/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at e32ce3f)/src/d2q9_optimalMixing/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
