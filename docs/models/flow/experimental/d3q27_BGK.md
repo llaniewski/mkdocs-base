@@ -5,8 +5,8 @@ d3q27_BGK
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 970fa57)/src/d3q27_BGK/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 970fa57)/src/d3q27_BGK/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at c39f572)/src/d3q27_BGK/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at c39f572)/src/d3q27_BGK/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
