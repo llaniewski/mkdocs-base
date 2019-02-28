@@ -2,6 +2,8 @@
 # About TCLB_docs repo
 This repo contains documentation for the tclb solver: https://github.com/CFD-GO/TCLB
 
+Tutorials are hosted at https://tclb-docs.netlify.com/
+
 ## Tutorial
 
 This short tutorial will show you how to serve the webpage at you local machine and test your changes.
