@@ -21,7 +21,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump)) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump), [<code>&lt;EvalIf/&gt;</code>](Executions.md#evalif)) 
 
 
 | Attribute | Comment | Value |
@@ -35,7 +35,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump)) 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump), [<code>&lt;EvalIf/&gt;</code>](Executions.md#evalif)) 
 
 
 | Attribute | Comment | Value |
@@ -165,4 +165,21 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 | `Iterations=` |  | Value with unit (int) |
 | `file=` | the name of the binary file | Value with unit (NULL) |
 | `filename=` | full path to the binary file | Value with unit (NULL) |
+
+##  EvalIf 
+
+```xml
+<EvalIf .../>
+```
+
+Evaluate subactions only if opt_present build (d2qg and d2q9_bc, option is *bc* )options are present, or only if opt_missing is missing
+ 
+Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+
+
+| Attribute | Comment | Value |
+| --- | --- | --- |
+| `Iterations=` |  | Value with unit (int) |
+| `opt_present=` |  | Value with unit (NULL) |
+| `opt_missing=` |  | Value with unit (NULL) |
 
