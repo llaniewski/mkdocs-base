@@ -1,12 +1,12 @@
 
 
 ## Description
-The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow simulation.  It is a implementation of a simple Multiple-Relaxation-Time collision operator.  The model has one [option](/basics/options/): BC. This option turns on custom fields for setting non-standard profiles on inlets and other things.
+d2q9_par_BC
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 21557e6)/src/d2q9_BC/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 21557e6)/src/d2q9_BC/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_par_BC/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_par_BC/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -39,6 +39,7 @@ The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow simulatio
 | --- | --- | --- |
 |`Rho`|`kg/m3`|Rho|
 |`U`|`m/s`|U|
+|`Solid`|`1`|Solid|
 
 #### [Exported Global Integrals](Globals) (CSV, etc)
 
@@ -57,7 +58,6 @@ The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow simulatio
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
-|OBJECTIVE|Inlet, Outlet|
 |SETTINGZONE|DefaultZone|
 
 ### [Solved fields](Fields)
@@ -73,8 +73,9 @@ The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow simulatio
 |`f[6]`|![stencil](/images/st_a1p1n1p0p1n1p0.png)|f[6]|
 |`f[7]`|![stencil](/images/st_a1p1p1p0p1p1p0.png)|f[7]|
 |`f[8]`|![stencil](/images/st_a1n1p1p0n1p1p0.png)|f[8]|
-|`BC[0]`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[0]|
-|`BC[1]`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[1]|
+|`ux`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|ux|
+|`uy`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|uy|
+|`sol`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|sol|
 
 ### [Densities - default accessors](Densities)
 
@@ -89,21 +90,24 @@ The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow simulatio
 |`f[6]`|f[6]|![stencil](/images/st_a1n1p1p0n1p1p0.png)|f[6]|
 |`f[7]`|f[7]|![stencil](/images/st_a1n1n1p0n1n1p0.png)|f[7]|
 |`f[8]`|f[8]|![stencil](/images/st_a1p1n1p0p1n1p0.png)|f[8]|
-|`BC[0]`|BC[0]|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[0]|
-|`BC[1]`|BC[1]|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[1]|
+|`ux`|ux|![stencil](/images/st_a1p0p0p0p0p0p0.png)|ux|
+|`uy`|uy|![stencil](/images/st_a1p0p0p0p0p0p0.png)|uy|
+|`sol`|sol|![stencil](/images/st_a1p0p0p0p0p0p0.png)|sol|
 
 ### [Action stages](Stages)
 
 | Name | Main procedure | Preloaded densities | Pushed fields |
 | --- | --- | --- | --- |
-|BaseIteration|Run|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], BC[0], BC[1]|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], BC[0], BC[1]|
-|BaseInit|Init|_none_|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], BC[0], BC[1]|
+|BaseIteration|Run|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], ux, uy, sol|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]|
+|CalcU|CalcU|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]|ux, uy, sol|
+|CalcF|CalcF|ux, uy, sol|ux, uy, sol|
+|BaseInit|Init|_none_|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], ux, uy, sol|
 
 
 ### [Actions](Stages)
 
 | Name | Stages |
 | --- | --- |
-|Iteration|BaseIteration|
-|Init|BaseInit|
+|Iteration|BaseIteration, CalcU, CalcF|
+|Init|BaseInit, CalcU, CalcF|
 
