@@ -1,21 +1,24 @@
 
 
 ## Description
-d2q9_pf
+d2q9_csf_bc_noflow_weno
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_csf_bc_noflow_weno/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_csf_bc_noflow_weno/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
 | Name | Comment |
 | --- | --- |
-|`PhaseField`|Phase Field marker scalar|
 |`VelocityX`|inlet/outlet/init velocity|
 |`VelocityY`|inlet/outlet/init velocity|
 |`Pressure`|inlet/outlet/init density|
+|`PhaseField`|Phase Field marker scalar|
+|`WettingAngle`|WettingAngle|
+|`WallAdhesionDecay`|WallAdhesionDecay|
+|`BrinkmanHeightInv`|BrinkmanHeightInv|
 |`PressureLossInObj`|Weight of [pressure loss] in objective|
 |`OutletFluxInObj`|Weight of [pressure loss] in objective|
 |`InletFluxInObj`|Weight of [pressure loss] in objective|
@@ -25,26 +28,41 @@ d2q9_pf
 
 | Name | Derived | Comment |
 | --- | --- | --- |
-|`IntWidth`||Interface width|
-|`Mobility`||Mobility|
 |`OverwriteVelocityField`||OverwriteVelocityField|
-|`RelaxationRate`|1.0/(3*Viscosity + 0.5)|one over relaxation time|
+|`PF_Advection_Switch`||Parameter to turn on/off advection of phase field - usefull for initialisation|
+|`omega`|1.0/(3*Viscosity + 0.5)|one over relaxation time|
+|`omega2_ph`||one over relaxation time - second for phase field|
+|`omega_l`|1.0/(3*Viscosity_l + 0.5)|one over relaxation time, light phase|
 |`Viscosity`||viscosity|
+|`Viscosity_l`||viscosity|
+|`Mobility`||Mobility|
 |`GravitationX`||GravitationX|
 |`GravitationY`||GravitationY|
-|`S2`|1-RelaxationRate|MRT Sx|
+|`IntWidth`||1/(PF interface width)|
+|`GravitationX_l`||GravitationX_l|
+|`GravitationY_l`||GravitationY_l|
+|`SurfaceTensionDecay`||SurfaceTensionDecay|
+|`SurfaceTensionRate`||SurfaceTensionRate|
+|`S2`||MRT Sx|
 |`S3`||MRT Sx|
 |`S4`||MRT Sx|
+|`nubuffer`||Viscosity in the buffer layer in cumulant collision model|
+|`WallSmoothingMagic`||Wall normal smoothing parameter, higher - more smoothed|
 |`Threshold`||Parameters threshold|
 
 ### [Exported Quantities](Quantities) (VTK, etc)
 
 | Name | [Unit](Units) | Comment |
 | --- | --- | --- |
-|`Normal`|`1/m`|Normal|
-|`PhaseField`|`1`|PhaseField|
+|`H_Z`|`1`|H_Z|
 |`Rho`|`kg/m3`|Rho|
 |`U`|`m/s`|U|
+|`Normal`|`1/m`|Normal|
+|`PhaseField`|`1`|PhaseField|
+|`Curvature`|`1`|Curvature|
+|`InterfaceForce`|`1`|InterfaceForce|
+|`DEBUG`|`1`|DEBUG|
+|`WallNormal`|`1`|WallNormal|
 
 #### [Exported Global Integrals](Globals) (CSV, etc)
 
@@ -59,7 +77,7 @@ d2q9_pf
 
 | Group | Types |
 | --- | --- |
-|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, NPressure, SPressure|
+|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, NSymmetry, SSymmetry, NVelocity, SVelocity|
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
@@ -88,8 +106,12 @@ d2q9_pf
 |`h[6]`|![stencil](/images/st_a1p1n1p0p1n1p0.png)|h[6]|
 |`h[7]`|![stencil](/images/st_a1p1p1p0p1p1p0.png)|h[7]|
 |`h[8]`|![stencil](/images/st_a1n1p1p0n1p1p0.png)|h[8]|
+|`h_Z`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|h_Z|
 |`BC[0]`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[0]|
 |`BC[1]`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[1]|
+|`nw_x`|![stencil](/images/st_a1n1n1p0p1p1p0.png)|nw_x|
+|`nw_y`|![stencil](/images/st_a1n1n1p0p1p1p0.png)|nw_y|
+|`phi`|![stencil](/images/st_a1n1n1p0p1p1p0.png)|phi|
 
 ### [Densities - default accessors](Densities)
 
@@ -113,6 +135,7 @@ d2q9_pf
 |`h[6]`|h[6]|![stencil](/images/st_a1n1p1p0n1p1p0.png)|h[6]|
 |`h[7]`|h[7]|![stencil](/images/st_a1n1n1p0n1n1p0.png)|h[7]|
 |`h[8]`|h[8]|![stencil](/images/st_a1p1n1p0p1n1p0.png)|h[8]|
+|`h_Z`|h_Z|![stencil](/images/st_a1p0p0p0p0p0p0.png)|h_Z|
 |`BC[0]`|BC[0]|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[0]|
 |`BC[1]`|BC[1]|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[1]|
 
@@ -120,14 +143,16 @@ d2q9_pf
 
 | Name | Main procedure | Preloaded densities | Pushed fields |
 | --- | --- | --- | --- |
-|BaseIteration|Run|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8], BC[0], BC[1]|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8], BC[0], BC[1]|
-|BaseInit|Init|_none_|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8], BC[0], BC[1]|
+|BaseIteration|Run|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8], h_Z, BC[0], BC[1]|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8], h_Z, nw_x, nw_y|
+|CalcPhi|CalcPhi|h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8]|phi|
+|BaseInit|Init|BC[0], BC[1]|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], h[0], h[1], h[2], h[3], h[4], h[5], h[6], h[7], h[8], h_Z|
+|CalcWallNormall|CalcNormal|_none_|nw_x, nw_y|
 
 
 ### [Actions](Stages)
 
 | Name | Stages |
 | --- | --- |
-|Iteration|BaseIteration|
-|Init|BaseInit|
+|Iteration|BaseIteration, CalcPhi|
+|Init|BaseInit, CalcPhi, CalcWallNormall|
 
