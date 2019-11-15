@@ -46,6 +46,6 @@ Imports a STL file as geometrical object. The element works in two modes. In the
 | --- | --- | --- |
 | `file=` | STL file to import | Unknown type |
 | `side=` | Specifies if to fill the interior (in), exterior (out), or the surface (see description) | Select from: out, in, surface |
-| `ray_axis=` | Specifies the axis along which rays will be cast for in/out filling of STL | Select from: x, TRUE, z |
+| `ray_axis=` | Specifies the axis along which rays will be cast for in/out filling of STL | Select from: x, y, z |
 | `scale=` | Specifies the scale by which the STL geometry should be multiplied. If you work in physical units, this can be e.g. "1m" | Value with unit (float) |
 

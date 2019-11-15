@@ -7,7 +7,7 @@
 
 Main solution element. It runs a prescribed number of iterations.
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
@@ -21,7 +21,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump), [<code>&lt;EvalIf/&gt;</code>](Executions.md#evalif)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump), [<code>&lt;EvalIf/&gt;</code>](Executions.md#evalif)) 
 
 
 | Attribute | Comment | Value |
@@ -35,7 +35,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump), [<code>&lt;EvalIf/&gt;</code>](Executions.md#evalif)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)), [Executions](Executions.md) ([<code>&lt;Solve/&gt;</code>](Executions.md#solve), [<code>&lt;Adjoint/&gt;</code>](Executions.md#adjoint), [<code>&lt;Optimize/&gt;</code>](Executions.md#optimize), [<code>&lt;Threshold/&gt;</code>](Executions.md#threshold), [<code>&lt;ThresholdNow/&gt;</code>](Executions.md#thresholdnow), [<code>&lt;Repeat/&gt;</code>](Executions.md#repeat), [<code>&lt;LoadBinary/&gt;</code>](Executions.md#loadbinary), [<code>&lt;SaveBinary/&gt;</code>](Executions.md#savebinary), [<code>&lt;LoadMemoryDump/&gt;</code>](Executions.md#loadmemorydump), [<code>&lt;SaveMemoryDump/&gt;</code>](Executions.md#savememorydump), [<code>&lt;EvalIf/&gt;</code>](Executions.md#evalif)) 
 
 
 | Attribute | Comment | Value |
@@ -57,7 +57,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 
 Goes with a threshold from 0 to 1. Then for a specific threshold sets all the parameter below the threshold to 0 and above the threshold to 1. Then runs the calculation for the binary (0-1) parameter set.
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
@@ -73,7 +73,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 
 For a specific threshold sets all the parameter below the threshold to 0 and above the threshold to 1. Then runs the calculation for the binary (0-1) parameter set.
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
@@ -92,7 +92,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
 A loop element 
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
@@ -107,14 +107,14 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
 Load a Field from a binary file (low level) 
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
 | `Iterations=` |  | Value with unit (int) |
 | `file=` | path to a binary file (without the suffix) | Unknown type |
-| `comp=` | Field to load from the binary file | Select from: Fields |
+| `comp=` | Field to load from the binary file | Select from: list(special = "Fields") |
 
 ##  SaveBinary 
 
@@ -123,7 +123,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
 Save a Field to a binary file (low level) 
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
@@ -131,7 +131,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 | `Iterations=` |  | Value with unit (int) |
 | `file=` | the name of the binary file | Unknown type |
 | `filename=` | full path to the binary file | Unknown type |
-| `comp=` | Field to save to the binary file | Select from: Fields |
+| `comp=` | Field to save to the binary file | Select from: list(special = "Fields") |
 
 ##  LoadMemoryDump 
 
@@ -140,7 +140,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 ```
 
 Load all fields from a dump created by Save element 
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
@@ -157,7 +157,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 Save all fields, to be loaded later on with LoadMemoryDump
 Warning: Save and Load Memory Dump have to be used on the *same number of cores*, same model and same precision.
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |
@@ -174,7 +174,7 @@ Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md
 
 Evaluate subactions only if opt_present build (d2qg and d2q9_bc, option is *bc* )options are present, or only if opt_missing is missing
  
-Possible children: [Params](Params.md) ([<code>&lt;Params/&gt;</code>](Params.md#params)) 
+Possible children: [Params](Params.md) ([<code>&lt;Param/&gt;</code>](Params.md#param)) 
 
 
 | Attribute | Comment | Value |

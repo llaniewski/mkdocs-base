@@ -26,9 +26,9 @@ Export HDF5 data file and Xdmf description
 | `Iterations=` |  | Value with unit (int) |
 | `what=` | List of Quantities and Geometry Components to export. | Comma separated list of elements from: |
 | `name=` | Name of the HDF5 and Xdmf file. | Unknown type |
-| `compress=` | Use ZLIB deflation filter to compress output | Select from: TRUE, FALSE |
-| `write_xdmf=` | Write Xdmf accompaning file describing the data for visualisation | Select from: TRUE, FALSE |
-| `point_data=` | Write Xdmf that described the data as Point Data and not Cell Data | Select from: TRUE, FALSE |
+| `compress=` | Use ZLIB deflation filter to compress output | Unknown type |
+| `write_xdmf=` | Write Xdmf accompaning file describing the data for visualisation | Unknown type |
+| `point_data=` | Write Xdmf that described the data as Point Data and not Cell Data | Unknown type |
 | `chunk=` | HDF5 Chunk size (not supported yet) | Unknown type |
 | `precision=` | Select the precision of the HDF5 data. If this doesn't match the calculation type, this can conflict with compression. | Select from: float, double |
 
@@ -44,7 +44,7 @@ Export data to TXT file
 | --- | --- | --- |
 | `Iterations=` |  | Value with unit (int) |
 | `name=` | Name of the TXT file. | Unknown type |
-| `gzip=` | If to compress the TXT output | Select from: TRUE, FALSE |
+| `gzip=` | If to compress the TXT output | Unknown type |
 
 ##  Catalyst 
 
@@ -59,7 +59,7 @@ Run Catalyst co-processor
 | `Iterations=` |  | Value with unit (int) |
 | `export=` | Select if to provide the Catalyst co-processor with VTK Cell of Point Data | Select from: CellData, PointData |
 | `script=` | Catalyst co-processing Python script | Unknown type |
-| `preprocess=` | If active, the Python script will be modified so that the files will be placed in the output directory | Select from: TRUE, FALSE |
+| `preprocess=` | If active, the Python script will be modified so that the files will be placed in the output directory | Unknown type |
 
 ##  Log 
 
@@ -99,8 +99,9 @@ PID controller. Allows to achive a specified value of an Global, with tweaking o
 | Attribute | Comment | Value |
 | --- | --- | --- |
 | `Iterations=` |  | Value with unit (int) |
-| `Unknown=` | Target value for a specified Global | Numeric (float) |
-| `control=` | The setting to control (currently only zonal settings are supported) | Unknown type |
+| `integral=` | Target value for a specified Global | Select from: list(special = "Globals") |
+| `control=` | The setting to control (currently only zonal settings are supported) | Select from: list(special = "Settings") |
+| `zone=` | The setting to control (currently only zonal settings are supported) | Select from: list(special = "Zones") |
 | `scale=` | The proportional rate D in PID controller | Numeric (float) |
 | `DerivativeTime=` | The derivative time scale. D = P * DerivativeTime | Numeric (float) |
 | `IntegrationTime=` | The integral time scale. I = P / IntegrationTime | Numeric (float) |
@@ -116,6 +117,5 @@ Effecient sampling of quantities on each iteration, without need for VTK
 | Attribute | Comment | Value |
 | --- | --- | --- |
 | `Iterations=` |  | Value with unit (int) |
-| `Iterations=` | Iteration period after which the sampled data will be written to a file | Numeric (int) |
 | `what=` | List of Quantities to be sampled. By default all are sampled. | Comma separated list of elements from: |
 

@@ -9,7 +9,7 @@
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `what=` | Select a time-dependent setting to optimize | Select from: SettingInZone |
+| `what=` | Select a time-dependent setting to optimize | Select from: list(special = "SettingInZone") |
 
 ##  OptimalControlSecond 
 
@@ -22,7 +22,7 @@ Parametrises a time-dependend Setting with the value of every second iteration. 
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `what=` | Select a time-dependent setting to optimize | Select from: SettingInZone |
+| `what=` | Select a time-dependent setting to optimize | Select from: list(special = "SettingInZone") |
 | `lower=` | Lower limit on the value of the Setting | Value with unit (float) |
 | `upper=` | Upper limit on the value of the Setting | Value with unit (float) |
 
@@ -57,7 +57,7 @@ Makes B-Spline transform/smoothing of a time-dependent Setting (OptimalControl)
 | Attribute | Comment | Value |
 | --- | --- | --- |
 | `nodes=` | Number of degrees of freedom (parameters) of the b-spline | Numeric (int) |
-| `periodic=` | If the b-spline should be periotic in the control period | Select from: TRUE, FALSE |
+| `periodic=` | If the b-spline should be periotic in the control period | Unknown type |
 | `lower=` | Lower limit on the values | Value with unit (float) |
 | `upper=` | Upper limit on the values | Value with unit (float) |
 

@@ -1,14 +1,15 @@
 #  Params 
-##  Params 
+##  Param 
 
 ```xml
-<Params .../>
+<Param .../>
 ```
 
  
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `Unknown=` |  | Value with unit (float) |
+| `name=` |  | Select from: list(special = "Settings") |
+| `value=` |  | Value with unit (float) |
 | `gauge=` |  | Value with unit (float) |
 
