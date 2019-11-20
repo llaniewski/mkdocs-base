@@ -1,12 +1,20 @@
 
 
 ## Description
-The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the simulation of immiscible fluids (at both high and low density ratios).  The base implementation uses a velocity based LBM for capturing the hydrodynamics of the flow and solves the conservative phase field equation for the interfacial dynamics. To enhance stability, a Weighted-Multiple-Relaxation-Time collision operator is used.  The model currently has 3 options at compile time:  	- OutFlow; this enables convective and neumann outflow conditions. It requires extra memory access and is thus added as a compile option (faster code without). 	- BGK; this is in existence for the sole reason of initial testing, however if you would like to use a BGK collision operator - this flag is necessary. 	- autosym; both of these options can be compiled with symmetry conditions. 
+The 'd3q27_pf_velocity' model is a multiphase 3D lattice Boltzmann model for the simulation of immiscible fluids (at both high and low density ratios).
+
+The base implementation uses a velocity based LBM for capturing the hydrodynamics of the flow and solves the conservative phase field equation for the interfacial dynamics. To enhance stability, a Weighted-Multiple-Relaxation-Time collision operator is used.
+
+The model currently has 3 options at compile time: 
+	- OutFlow; this enables convective and neumann outflow conditions. It requires extra memory access and is thus added as a compile option (faster code without).
+	- BGK; this is in existence for the sole reason of initial testing, however if you would like to use a BGK collision operator - this flag is necessary.
+	- autosym; both of these options can be compiled with symmetry conditions. 
+
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at ddb94d2)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at ddb94d2)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27_pf_velocity_OutFlow_autosym/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 

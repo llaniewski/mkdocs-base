@@ -9,7 +9,7 @@
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `what=` | Select a time-dependent setting to optimize | Value with unit (NULL) |
+| `what=` | Select a time-dependent setting to optimize | Select from: list(special = "SettingInZone") |
 
 ##  OptimalControlSecond 
 
@@ -22,7 +22,7 @@ Parametrises a time-dependend Setting with the value of every second iteration. 
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `what=` | Select a time-dependent setting to optimize | Value with unit (NULL) |
+| `what=` | Select a time-dependent setting to optimize | Select from: list(special = "SettingInZone") |
 | `lower=` | Lower limit on the value of the Setting | Value with unit (float) |
 | `upper=` | Upper limit on the value of the Setting | Value with unit (float) |
 
@@ -39,7 +39,7 @@ Makes a truncated Fourier transform of a time-dependent Setting (OptimalControl)
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `modes=` | Number of Fourier modes to use for the parametrization | Value with unit (NULL) |
+| `modes=` | Number of Fourier modes to use for the parametrization | Select from: int |
 | `lower=` | Lower limit on the Fourier coefficients | Value with unit (float) |
 | `upper=` | Upper limit on the Fourier coefficients | Value with unit (float) |
 
@@ -56,8 +56,8 @@ Makes B-Spline transform/smoothing of a time-dependent Setting (OptimalControl)
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `nodes=` | Number of degrees of freedom (parameters) of the b-spline | Value with unit (NULL) |
-| `periodic=` | If the b-spline should be periotic in the control period | Value with unit (NULL) |
+| `nodes=` | Number of degrees of freedom (parameters) of the b-spline | Numeric (int) |
+| `periodic=` | If the b-spline should be periotic in the control period | Unknown type |
 | `lower=` | Lower limit on the values | Value with unit (float) |
 | `upper=` | Upper limit on the values | Value with unit (float) |
 
