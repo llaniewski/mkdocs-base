@@ -3,11 +3,10 @@
 ## Description
 d3q19_heat
 
-
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q19_heat/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q19_heat/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at b778e2d)/src/d3q19_heat/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at b778e2d)/src/d3q19_heat/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
