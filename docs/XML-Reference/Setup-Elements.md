@@ -26,9 +26,9 @@ Prescribe properties of the synthetic turbulence generated for initialization an
 
 | Attribute | Comment | Value |
 | --- | --- | --- |
-| `Modes=` | Number of harmonic modes to generate for the turbulence | Numeric (int) |
-| `Spread=` | The way to divide the spectrum to a finite number of modes | Select from: Even, Log, Quantile |
-| `Spectrum=` | Type of spectrum to use | Select from: Von Karman, One Wave |
+| `Modes=` | Number of harmonic modes to generate for the turbulence | Value with unit (NULL) |
+| `Spread=` | The way to divide the spectrum to a finite number of modes | Value with unit (NULL) |
+| `Spectrum=` | Type of spectrum to use | Value with unit (NULL) |
 | `MainWaveLength=` | Main wave-length in the Von Karman spectrum | Value with unit (float) |
 | `DiffusionWaveLength=` | Diffusion scale wave-length in the Von Karman spectrum | Value with unit (float) |
 | `MinWaveLength=` | Minimal space wave-length | Value with unit (float) |

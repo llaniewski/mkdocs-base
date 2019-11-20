@@ -1,20 +1,20 @@
 
 
 ## Description
-d2q9_pp_LBL
+The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow simulation.  It is a implementation of a simple Multiple-Relaxation-Time collision operator.  The model has one [option](/basics/options/): BC. This option turns on custom fields for setting non-standard profiles on inlets and other things.
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pp_LBL/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pp_LBL/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_BC_autosym/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_BC_autosym/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
 | Name | Comment |
 | --- | --- |
-|`Velocity`|inlet/outlet/init velocity|
-|`VelocityY`|init velocity in y dirn|
-|`Density`|inlet/outlet/init density|
+|`VelocityX`|inlet/outlet/init velocity|
+|`VelocityY`|inlet/outlet/init velocity|
+|`Pressure`|inlet/outlet/init density|
 |`PressureLossInObj`|Weight of [pressure loss] in objective|
 |`OutletFluxInObj`|Weight of [pressure loss] in objective|
 |`InletFluxInObj`|Weight of [pressure loss] in objective|
@@ -24,28 +24,13 @@ d2q9_pp_LBL
 
 | Name | Derived | Comment |
 | --- | --- | --- |
-|`G`||interaction strength|
-|`T`||effective temperature|
-|`alpha`||CS EoS parameter|
-|`R`||CS EoS parameter|
-|`beta`||CS EoS parameter|
-|`kappa`||surface tension parameter|
-|`eps_0`||mechanical stability coef|
-|`betaforcing`||beta forcing scheme|
-|`omega`|1.0/(3*nu + 0.5)|one over relaxation time|
-|`tempomega`||omega seems to get overwritten in preamble??|
-|`nu`||viscosity|
-|`GravitationY`||Gravitation in the direction of y|
-|`GravitationX`||Gravitation in the direction of x|
-|`S0`||MRT Sx|
-|`S1`||MRT Sx|
-|`S2`||MRT Sx|
+|`RelaxationRate`|1.0/(3*Viscosity + 0.5)|one over relaxation time|
+|`Viscosity`||viscosity|
+|`GravitationX`||GravitationX|
+|`GravitationY`||GravitationY|
+|`S2`|1-RelaxationRate|MRT Sx|
 |`S3`||MRT Sx|
 |`S4`||MRT Sx|
-|`S5`||MRT Sx|
-|`S6`||MRT Sx|
-|`S7`|1-omega|MRT Sx|
-|`S8`||MRT Sx|
 |`Threshold`||Parameters threshold|
 
 ### [Exported Quantities](Quantities) (VTK, etc)
@@ -54,9 +39,6 @@ d2q9_pp_LBL
 | --- | --- | --- |
 |`Rho`|`kg/m3`|Rho|
 |`U`|`m/s`|U|
-|`F`|`N`|F|
-|`P`|`Pa`|P|
-|`Psi`|`1`|Psi|
 
 #### [Exported Global Integrals](Globals) (CSV, etc)
 
@@ -71,11 +53,14 @@ d2q9_pp_LBL
 
 | Group | Types |
 | --- | --- |
-|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, BottomSymmetry, TopSymmetry, RightSymmetry|
+|BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, NVelocity, SVelocity, NSymmetry, SSymmetry|
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
+|OBJECTIVE|Inlet, Outlet|
 |SETTINGZONE|DefaultZone|
+|SYMX|SymmetryX_plus, SymmetryX_minus|
+|SYMY|SymmetryY_plus, SymmetryY_minus|
 
 ### [Solved fields](Fields)
 
@@ -90,7 +75,8 @@ d2q9_pp_LBL
 |`f[6]`|![stencil](/images/st_a1p1n1p0p1n1p0.png)|f[6]|
 |`f[7]`|![stencil](/images/st_a1p1p1p0p1p1p0.png)|f[7]|
 |`f[8]`|![stencil](/images/st_a1n1p1p0n1p1p0.png)|f[8]|
-|`psi`|![stencil](/images/st_a1n1n1p0p1p1p0.png)|psi|
+|`BC[0]`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[0]|
+|`BC[1]`|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[1]|
 
 ### [Densities - default accessors](Densities)
 
@@ -105,20 +91,21 @@ d2q9_pp_LBL
 |`f[6]`|f[6]|![stencil](/images/st_a1n1p1p0n1p1p0.png)|f[6]|
 |`f[7]`|f[7]|![stencil](/images/st_a1n1n1p0n1n1p0.png)|f[7]|
 |`f[8]`|f[8]|![stencil](/images/st_a1p1n1p0p1n1p0.png)|f[8]|
+|`BC[0]`|BC[0]|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[0]|
+|`BC[1]`|BC[1]|![stencil](/images/st_a1p0p0p0p0p0p0.png)|BC[1]|
 
 ### [Action stages](Stages)
 
 | Name | Main procedure | Preloaded densities | Pushed fields |
 | --- | --- | --- | --- |
-|BaseIteration|Run|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]|
-|calcPsi|calcPsi|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]|psi|
-|BaseInit|Init|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8]|
+|BaseIteration|Run|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], BC[0], BC[1]|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], BC[0], BC[1]|
+|BaseInit|Init|_none_|f[0], f[1], f[2], f[3], f[4], f[5], f[6], f[7], f[8], BC[0], BC[1]|
 
 
 ### [Actions](Stages)
 
 | Name | Stages |
 | --- | --- |
-|Iteration|BaseIteration, calcPsi|
-|Init|BaseInit, calcPsi|
+|Iteration|BaseIteration|
+|Init|BaseInit|
 
