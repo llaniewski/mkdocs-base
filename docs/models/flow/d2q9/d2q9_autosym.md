@@ -1,20 +1,12 @@
 
 
 ## Description
-The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow
-simulation.
-
-It is a implementation of a simple Multiple-Relaxation-Time collision
-operator.
-
-The model has one [option](/basics/options/): BC. This option turns on
-custom fields for setting non-standard profiles on inlets and other things.
-
+The `d2q9` model is a basic 2D Lattice Boltzmann Method model for flow simulation.  It is a implementation of a simple Multiple-Relaxation-Time collision operator.  The model has one [option](/basics/options/): BC. This option turns on custom fields for setting non-standard profiles on inlets and other things.
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_autosym/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_autosym/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d2q9_autosym/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d2q9_autosym/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 

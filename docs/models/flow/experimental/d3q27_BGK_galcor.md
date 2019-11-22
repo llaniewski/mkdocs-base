@@ -3,11 +3,10 @@
 ## Description
 d3q27_BGK_galcor
 
-
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27_BGK_galcor/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27_BGK_galcor/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d3q27_BGK_galcor/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(no branch)/src/d3q27_BGK_galcor/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
