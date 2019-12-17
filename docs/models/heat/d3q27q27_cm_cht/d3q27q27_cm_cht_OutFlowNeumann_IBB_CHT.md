@@ -24,8 +24,8 @@
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_OutFlowNeumann_SMAG/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_OutFlowNeumann_SMAG/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_OutFlowNeumann_IBB_CHT/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_OutFlowNeumann_IBB_CHT/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -77,7 +77,6 @@
 |`CylinderCenterY`||Y coord of cylinder with imposed heat flux|
 |`CylinderCenterX_GH`||X coord of Gaussian Hill|
 |`CylinderCenterY_GH`||Y coord of Gaussian Hill|
-|`Smag`||Smagorinsky coefficient for SGS modeling|
 |`Threshold`||Parameters threshold|
 
 ### [Exported Quantities](Quantities) (VTK, etc)
@@ -125,6 +124,8 @@
 |BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity, ENeumann|
 |COLLISION|BGK, MRT, CM, CM_HIGHER, CM_HIGHER_NONLINEAR, Cumulants|
 |DESIGNSPACE|DesignSpace|
+|HO_BOUNDARY_HEAT|HeaterDirichletTemperatureIABB, ThermalIBB|
+|HO_BOUNDARY_HYDRO|HydroIBB|
 |NONE|None|
 |OBJECTIVEFLUX|FluxMeasurmentZone1, FluxMeasurmentZone2|
 |OBJECTIVEFORCE|ForceMeasurmentZone|

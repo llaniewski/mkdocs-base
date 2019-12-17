@@ -44,12 +44,18 @@
 |`FDragInObj`|Weight of [Force exerted on body in X-direction] in objective|
 |`FLateralInObj`|Weight of [Force exerted on body in Y-direction] in objective|
 |`FLiftInObj`|Weight of [Force exerted on body in Z-direction] in objective|
-|`XHydroFLuxInObj`|Weight of [XHydroFLux] in objective|
-|`YHydroFLuxInObj`|Weight of [YHydroFLux] in objective|
-|`ZHydroFLuxInObj`|Weight of [ZHydroFLux] in objective|
-|`HeatFluxXInObj`|Weight of [Heat flux from body in X-direction] in objective|
-|`HeatFluxYInObj`|Weight of [Heat flux from body in Y-direction] in objective|
-|`HeatFluxZInObj`|Weight of [Heat flux from body in Z-direction] in objective|
+|`XHydroFLuxInObj`|Weight of [Momentum flux in X-direction] in objective|
+|`YHydroFLuxInObj`|Weight of [Momentum flux in Y-direction] in objective|
+|`ZHydroFLuxInObj`|Weight of [Momentum flux in Z-direction] in objective|
+|`XHydroFLux2InObj`|Weight of [Momentum flux (2nd logger) in X-direction] in objective|
+|`YHydroFLux2InObj`|Weight of [Momentum flux (2nd logger) in Y-direction] in objective|
+|`ZHydroFLux2InObj`|Weight of [Momentum flux (2nd logger) in Z-direction] in objective|
+|`HeatFluxXInObj`|Weight of [Heat flux in X-direction] in objective|
+|`HeatFluxYInObj`|Weight of [Heat flux in Y-direction] in objective|
+|`HeatFluxZInObj`|Weight of [Heat flux in Z-direction] in objective|
+|`HeatFluxX2InObj`|Weight of [Heat flux (2nd logger) in X-direction] in objective|
+|`HeatFluxY2InObj`|Weight of [Heat flux (2nd logger) in Y-direction] in objective|
+|`HeatFluxZ2InObj`|Weight of [Heat flux (2nd logger) in Z-direction] in objective|
 |`HeatSourceInObj`|Weight of [Total Heat flux from body] in objective|
 
 
@@ -60,7 +66,6 @@
 |`GravitationX`||applied rho*GravitationX|
 |`GravitationY`||applied rho*GravitationY|
 |`GravitationZ`||applied rho*GravitationZ|
-|`omega_nu`|1.0/(3*nu+0.5)|inverse of viscous relaxation time|
 |`nu`||kinematic viscosity|
 |`GalileanCorrection`||Galilean correction term|
 |`nu_buffer`||kinematic viscosity in the buffer layer|
@@ -79,10 +84,10 @@
 | Name | [Unit](Units) | Comment |
 | --- | --- | --- |
 |`Rho`|`kg/m3`|Rho|
-|`T`|`K`|T|
 |`U`|`m/s`|U|
-|`m00_F`|`1`|m00_F|
 |`H`|`J`|H|
+|`T`|`K`|T|
+|`m00_F`|`1`|m00_F|
 |`material_density`|`kg/m3`|material_density|
 |`cp`|`J/kg/K`|cp|
 |`conductivity`|`W/m/K`|conductivity|
@@ -95,12 +100,18 @@
 |`FDrag`|`N`|Force exerted on body in X-direction|
 |`FLateral`|`N`|Force exerted on body in Y-direction|
 |`FLift`|`N`|Force exerted on body in Z-direction|
-|`XHydroFLux`|`kg/s`|XHydroFLux|
-|`YHydroFLux`|`kg/s`|YHydroFLux|
-|`ZHydroFLux`|`kg/s`|ZHydroFLux|
-|`HeatFluxX`|`W`|Heat flux from body in X-direction|
-|`HeatFluxY`|`W`|Heat flux from body in Y-direction|
-|`HeatFluxZ`|`W`|Heat flux from body in Z-direction|
+|`XHydroFLux`|`kg/s`|Momentum flux in X-direction|
+|`YHydroFLux`|`kg/s`|Momentum flux in Y-direction|
+|`ZHydroFLux`|`kg/s`|Momentum flux in Z-direction|
+|`XHydroFLux2`|`kg/s`|Momentum flux (2nd logger) in X-direction|
+|`YHydroFLux2`|`kg/s`|Momentum flux (2nd logger) in Y-direction|
+|`ZHydroFLux2`|`kg/s`|Momentum flux (2nd logger) in Z-direction|
+|`HeatFluxX`|`W`|Heat flux in X-direction|
+|`HeatFluxY`|`W`|Heat flux in Y-direction|
+|`HeatFluxZ`|`W`|Heat flux in Z-direction|
+|`HeatFluxX2`|`W`|Heat flux (2nd logger) in X-direction|
+|`HeatFluxY2`|`W`|Heat flux (2nd logger) in Y-direction|
+|`HeatFluxZ2`|`W`|Heat flux (2nd logger) in Z-direction|
 |`HeatSource`|`W`|Total Heat flux from body|
 |`Objective`|`1`|Objective function|
 
@@ -111,11 +122,11 @@
 |ADDITIONALS|DarcySolid, Smoothing|
 |ADDITIONALS_HEAT|HeaterDirichletTemperatureEQ, HeaterDirichletTemperatureABB, HeaterSource, HeaterNeumannHeatFluxCylinder, HeaterNeumannHeatFluxEast|
 |BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity|
-|COLLISION|BGK, MRT, CM, CM_HIGHER, CM_HIGHER_NONLINEAR, Cumulants, Cumulants_Higher|
+|COLLISION|BGK, MRT, CM, CM_HIGHER, CM_HIGHER_NONLINEAR, Cumulants|
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
-|OBJECTIVEFLUX|FluxMeasurment|
-|OBJECTIVEFORCE|ForceMeasurment|
+|OBJECTIVEFLUX|FluxMeasurmentZone1, FluxMeasurmentZone2|
+|OBJECTIVEFORCE|ForceMeasurmentZone|
 |SETTINGZONE|DefaultZone|
 
 ### [Solved fields](Fields)

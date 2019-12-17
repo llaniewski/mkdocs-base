@@ -24,8 +24,8 @@
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_SMAG/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_SMAG/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_IBB_SMAG_CHT/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_IBB_SMAG_CHT/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -125,6 +125,8 @@
 |BOUNDARY|Wall, Solid, WVelocity, WPressure, WPressureL, EPressure, EVelocity|
 |COLLISION|BGK, MRT, CM, CM_HIGHER, CM_HIGHER_NONLINEAR, Cumulants|
 |DESIGNSPACE|DesignSpace|
+|HO_BOUNDARY_HEAT|HeaterDirichletTemperatureIABB, ThermalIBB|
+|HO_BOUNDARY_HYDRO|HydroIBB|
 |NONE|None|
 |OBJECTIVEFLUX|FluxMeasurmentZone1, FluxMeasurmentZone2|
 |OBJECTIVEFORCE|ForceMeasurmentZone|

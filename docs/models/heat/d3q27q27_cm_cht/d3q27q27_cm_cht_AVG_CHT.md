@@ -24,8 +24,8 @@
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_SMAG/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_SMAG/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_AVG_CHT/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d3q27q27_cm_cht_AVG_CHT/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -77,7 +77,6 @@
 |`CylinderCenterY`||Y coord of cylinder with imposed heat flux|
 |`CylinderCenterX_GH`||X coord of Gaussian Hill|
 |`CylinderCenterY_GH`||Y coord of Gaussian Hill|
-|`Smag`||Smagorinsky coefficient for SGS modeling|
 |`Threshold`||Parameters threshold|
 
 ### [Exported Quantities](Quantities) (VTK, etc)
@@ -93,6 +92,13 @@
 |`cp`|`J/kg/K`|cp|
 |`conductivity`|`W/m/K`|conductivity|
 |`RawU`|`m/s`|RawU|
+|`KinE`|`1`|Turbulent kinetic energy|
+|`ReStr`|`1`|Reynolds stress off-diagonal component|
+|`Dissipation`|`1`|Dissipation e|
+|`averageU`|`m/s`|averageU|
+|`varU`|`1`|varU|
+|`averageP`|`Pa`|averageP|
+|`averageT`|`K`|averageT|
 
 #### [Exported Global Integrals](Globals) (CSV, etc)
 
@@ -189,6 +195,20 @@
 |`h122`|![stencil](/images/st_b1n1p0p0p0p1p1.png)|heat LB density H 25|
 |`h222`|![stencil](/images/st_b1p0p0p0p1p1p1.png)|heat LB density H 26|
 |`U`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|U|
+|`avgT`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgT|
+|`avgP`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgP|
+|`varUX`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUX|
+|`varUY`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUY|
+|`varUZ`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUZ|
+|`varUXUY`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUXUY|
+|`varUXUZ`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUXUZ|
+|`varUYUZ`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUYUZ|
+|`avgdxu2`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgdxu2|
+|`avgdyv2`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgdyv2|
+|`avgdzw2`|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgdzw2|
+|`avgUX`|![stencil](/images/st_b1n1p0p0p1p0p0.png)|avgUX|
+|`avgUY`|![stencil](/images/st_b1p0n1p0p0p1p0.png)|avgUY|
+|`avgUZ`|![stencil](/images/st_b1p0p0n1p0p0p1.png)|avgUZ|
 
 ### [Densities - default accessors](Densities)
 
@@ -249,13 +269,27 @@
 |`h122`|h122|![stencil](/images/st_b1p1n1n1p1n1n1.png)|heat LB density H 25|
 |`h222`|h222|![stencil](/images/st_b1n1n1n1n1n1n1.png)|heat LB density H 26|
 |`U`|U|![stencil](/images/st_b1p0p0p0p0p0p0.png)|U|
+|`avgT`|avgT|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgT|
+|`avgP`|avgP|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgP|
+|`varUX`|varUX|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUX|
+|`varUY`|varUY|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUY|
+|`varUZ`|varUZ|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUZ|
+|`varUXUY`|varUXUY|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUXUY|
+|`varUXUZ`|varUXUZ|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUXUZ|
+|`varUYUZ`|varUYUZ|![stencil](/images/st_b1p0p0p0p0p0p0.png)|varUYUZ|
+|`avgdxu2`|avgdxu2|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgdxu2|
+|`avgdyv2`|avgdyv2|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgdyv2|
+|`avgdzw2`|avgdzw2|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgdzw2|
+|`avgUX`|avgUX|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgUX|
+|`avgUY`|avgUY|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgUY|
+|`avgUZ`|avgUZ|![stencil](/images/st_b1p0p0p0p0p0p0.png)|avgUZ|
 
 ### [Action stages](Stages)
 
 | Name | Main procedure | Preloaded densities | Pushed fields |
 | --- | --- | --- | --- |
-|BaseIteration|Run|f000, f100, f200, f010, f110, f210, f020, f120, f220, f001, f101, f201, f011, f111, f211, f021, f121, f221, f002, f102, f202, f012, f112, f212, f022, f122, f222, h000, h100, h200, h010, h110, h210, h020, h120, h220, h001, h101, h201, h011, h111, h211, h021, h121, h221, h002, h102, h202, h012, h112, h212, h022, h122, h222, U|f000, f100, f200, f010, f110, f210, f020, f120, f220, f001, f101, f201, f011, f111, f211, f021, f121, f221, f002, f102, f202, f012, f112, f212, f022, f122, f222, h000, h100, h200, h010, h110, h210, h020, h120, h220, h001, h101, h201, h011, h111, h211, h021, h121, h221, h002, h102, h202, h012, h112, h212, h022, h122, h222, U|
-|BaseInit|Init|_none_|f000, f100, f200, f010, f110, f210, f020, f120, f220, f001, f101, f201, f011, f111, f211, f021, f121, f221, f002, f102, f202, f012, f112, f212, f022, f122, f222, h000, h100, h200, h010, h110, h210, h020, h120, h220, h001, h101, h201, h011, h111, h211, h021, h121, h221, h002, h102, h202, h012, h112, h212, h022, h122, h222, U|
+|BaseIteration|Run|f000, f100, f200, f010, f110, f210, f020, f120, f220, f001, f101, f201, f011, f111, f211, f021, f121, f221, f002, f102, f202, f012, f112, f212, f022, f122, f222, h000, h100, h200, h010, h110, h210, h020, h120, h220, h001, h101, h201, h011, h111, h211, h021, h121, h221, h002, h102, h202, h012, h112, h212, h022, h122, h222, U, avgT, avgP, varUX, varUY, varUZ, varUXUY, varUXUZ, varUYUZ, avgdxu2, avgdyv2, avgdzw2, avgUX, avgUY, avgUZ|f000, f100, f200, f010, f110, f210, f020, f120, f220, f001, f101, f201, f011, f111, f211, f021, f121, f221, f002, f102, f202, f012, f112, f212, f022, f122, f222, h000, h100, h200, h010, h110, h210, h020, h120, h220, h001, h101, h201, h011, h111, h211, h021, h121, h221, h002, h102, h202, h012, h112, h212, h022, h122, h222, U, avgT, avgP, varUX, varUY, varUZ, varUXUY, varUXUZ, varUYUZ, avgdxu2, avgdyv2, avgdzw2, avgUX, avgUY, avgUZ|
+|BaseInit|Init|_none_|f000, f100, f200, f010, f110, f210, f020, f120, f220, f001, f101, f201, f011, f111, f211, f021, f121, f221, f002, f102, f202, f012, f112, f212, f022, f122, f222, h000, h100, h200, h010, h110, h210, h020, h120, h220, h001, h101, h201, h011, h111, h211, h021, h121, h221, h002, h102, h202, h012, h112, h212, h022, h122, h222, U, avgT, avgP, varUX, varUY, varUZ, varUXUY, varUXUZ, varUYUZ, avgdxu2, avgdyv2, avgdzw2, avgUX, avgUY, avgUZ|
 
 
 ### [Actions](Stages)
