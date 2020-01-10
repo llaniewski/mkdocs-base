@@ -32,8 +32,6 @@ d2q9_optimalMixing
 |`nu`||viscosity|
 |`omegaT`|1.0/(3*K + 0.5)|one over relaxation time - thermal|
 |`K`||thermal_diffusivity|
-|`Descent`||Optimization Descent|
-|`GradientSmooth`||Gradient smoothing in OptSolve|
 |`Threshold`||Parameters threshold|
 
 ### [Exported Quantities](Quantities) (VTK, etc)
@@ -55,11 +53,6 @@ d2q9_optimalMixing
 |`NMovingWallForce`|`1`|NMovingWallForce|
 |`SWallForce`|`1`|SWallForce|
 |`MovingWallPower`|`1`|MovingWallPower|
-|`omega_D`|`1`|Gradient of objective with respect to [one over relaxation time]|
-|`nu_D`|`1`|Gradient of objective with respect to [viscosity]|
-|`omegaT_D`|`1`|Gradient of objective with respect to [one over relaxation time - thermal]|
-|`K_D`|`1`|Gradient of objective with respect to [thermal_diffusivity]|
-|`AdjointRes`|`1`|square L2 norm of adjoint change|
 |`Objective`|`1`|Objective function|
 
 ### [Node Types](Node-Types)

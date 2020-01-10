@@ -41,8 +41,8 @@ Updates: 16/08/2018: Cascaded (CLBM) collision scheme is introduced for both hyd
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity_BGK_autosym/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity_BGK_autosym/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -138,6 +138,8 @@ Updates: 16/08/2018: Cascaded (CLBM) collision scheme is introduced for both hyd
 |DESIGNSPACE|DesignSpace|
 |NONE|None|
 |SETTINGZONE|DefaultZone|
+|SYMX|SymmetryX_plus, SymmetryX_minus|
+|SYMY|SymmetryY_plus, SymmetryY_minus|
 
 ### [Solved fields](Fields)
 

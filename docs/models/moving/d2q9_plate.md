@@ -45,8 +45,6 @@ d2q9_plate
 |`SM_M`||smoothing bias|
 |`EPSF`||boundary function, 0 - linear boundary,1 - third order boundary|
 |`BF`||beta function bool|
-|`Descent`||Optimization Descent|
-|`GradientSmooth`||Gradient smoothing in OptSolve|
 |`Threshold`||Parameters threshold|
 
 ### [Exported Quantities](Quantities) (VTK, etc)
@@ -74,15 +72,6 @@ d2q9_plate
 |`Power`|`W/m`|reaction force X|
 |`Power2`|`W/m`|reaction force Y|
 |`VolumeW`|`m2`|Volume of moving body|
-|`Smag_D`|`1`|Gradient of objective with respect to [inlet density]|
-|`PDX_D`|`1`|Gradient of objective with respect to [plate diameter X]|
-|`PDY_D`|`1`|Gradient of objective with respect to [plate diameter Y]|
-|`PRAD_D`|`1`|Gradient of objective with respect to [cylinder radious]|
-|`SM_D`|`1`|Gradient of objective with respect to [smoothing diameter]|
-|`SM_M_D`|`1`|Gradient of objective with respect to [smoothing bias]|
-|`EPSF_D`|`1`|Gradient of objective with respect to [boundary function, 0 - linear boundary,1 - third order boundary]|
-|`BF_D`|`1`|Gradient of objective with respect to [beta function bool]|
-|`AdjointRes`|`1`|square L2 norm of adjoint change|
 |`Objective`|`1`|Objective function|
 
 ### [Node Types](Node-Types)

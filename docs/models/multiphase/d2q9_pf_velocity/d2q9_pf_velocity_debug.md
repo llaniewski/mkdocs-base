@@ -41,8 +41,8 @@ Updates: 16/08/2018: Cascaded (CLBM) collision scheme is introduced for both hyd
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity_debug/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at FETCH_HEAD)/src/d2q9_pf_velocity_debug/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -62,6 +62,22 @@ Updates: 16/08/2018: Cascaded (CLBM) collision scheme is introduced for both hyd
 |`RTISpikeInObj`|Weight of [Spike Tracker] in objective|
 |`NMovingWallForceInObj`|Weight of [force exerted on the N Moving Wall] in objective|
 |`NMovingWallPowerInObj`|Weight of [implented: Vx* incoming momentum (precollision)] in objective|
+|`MomentumXInObj`|Weight of [Total momentum in the domain] in objective|
+|`MomentumYInObj`|Weight of [Total momentum in the domain] in objective|
+|`MomentumX_afterColInObj`|Weight of [Total momentum in the domain] in objective|
+|`MomentumY_afterColInObj`|Weight of [Total momentum in the domain] in objective|
+|`F_pressureXInObj`|Weight of [Pressure force X] in objective|
+|`F_pressureYInObj`|Weight of [Pressure force Y] in objective|
+|`F_bodyXInObj`|Weight of [Body force X] in objective|
+|`F_bodyYInObj`|Weight of [Body force Y] in objective|
+|`F_surf_tensionXInObj`|Weight of [Surface tension force X] in objective|
+|`F_surf_tensionYInObj`|Weight of [Surface tension force Y] in objective|
+|`F_muXInObj`|Weight of [Viscous tension force X] in objective|
+|`F_muYInObj`|Weight of [Viscous tension force Y] in objective|
+|`F_total_hydroXInObj`|Weight of [Total hydrodynamic force X] in objective|
+|`F_total_hydroYInObj`|Weight of [Total hydrodynamic force Y] in objective|
+|`F_phiXInObj`|Weight of [Forcing term for interface tracking X] in objective|
+|`F_phiYInObj`|Weight of [Forcing term for interface tracking Y] in objective|
 |`FDragInObj`|Weight of [Force exerted on body in X-direction] in objective|
 |`FLiftInObj`|Weight of [Force exerted on body in Y-direction] in objective|
 |`FTotalInObj`|Weight of [Force exerted on body in X+Y -direction] in objective|
@@ -122,6 +138,22 @@ Updates: 16/08/2018: Cascaded (CLBM) collision scheme is introduced for both hyd
 |`RTISpike`|`1`|Spike Tracker|
 |`NMovingWallForce`|`1`|force exerted on the N Moving Wall|
 |`NMovingWallPower`|`1`|implented: Vx* incoming momentum (precollision)|
+|`MomentumX`|``|Total momentum in the domain|
+|`MomentumY`|``|Total momentum in the domain|
+|`MomentumX_afterCol`|``|Total momentum in the domain|
+|`MomentumY_afterCol`|``|Total momentum in the domain|
+|`F_pressureX`|``|Pressure force X|
+|`F_pressureY`|``|Pressure force Y|
+|`F_bodyX`|``|Body force X|
+|`F_bodyY`|``|Body force Y|
+|`F_surf_tensionX`|``|Surface tension force X|
+|`F_surf_tensionY`|``|Surface tension force Y|
+|`F_muX`|``|Viscous tension force X|
+|`F_muY`|``|Viscous tension force Y|
+|`F_total_hydroX`|``|Total hydrodynamic force X|
+|`F_total_hydroY`|``|Total hydrodynamic force Y|
+|`F_phiX`|``|Forcing term for interface tracking X|
+|`F_phiY`|``|Forcing term for interface tracking Y|
 |`FDrag`|`N`|Force exerted on body in X-direction|
 |`FLift`|`N`|Force exerted on body in Y-direction|
 |`FTotal`|`N`|Force exerted on body in X+Y -direction|
