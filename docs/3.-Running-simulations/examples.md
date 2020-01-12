@@ -25,8 +25,8 @@ Below is presented a simple 3-Dimensional case, with a ball in the middle of the
         </Wall>
     </Geometry>
     <Model>
-        <Params Velocity-Inlet="0.1"/>
-        <Params nu="0.05"/>
+        <Param name="Velocity" value="0.1" zone="Inlet"/>
+        <Param name="nu" value="0.05"/>
     </Model>
     <VTK Iterations="100" what = "U,P"/>
     <Solve Iterations="1000"/>
@@ -40,8 +40,8 @@ Note: It is not necessary to specify `<Box nx="1">` for Inlet/Outlet, as it is d
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/test">
     <Units>
-        <Params Velocity="1m/s" gauge="0.1"/>
-        <Params Viscosity="0.01m2/s" gauge="0.01"/>
+        <Param name="Velocity" value="1m/s" gauge="0.1"/>
+        <Param name="Viscosity" value="0.01m2/s" gauge="0.01"/>
     </Units>
     <Geometry nx="12.8m" ny="12.8m" nz="12.8m">
         <MRT><Box/></MRT>
@@ -52,19 +52,19 @@ Note: It is not necessary to specify `<Box nx="1">` for Inlet/Outlet, as it is d
         </Wall>
     </Geometry>
     <Model>
-        <Params Velocity-Inlet="1m/s"/>
-        <Params nu="0.05m2/s"/>
+        <Param name="Velocity" value="1m/s" zone="Inlet"/>
+        <Param name="nu" value="0.05m2/s"/>
     </Model>
     <VTK Iterations="100" what = "U,P"/>
     <Solve Iterations="1000"/>
 </CLBConfig>
 
 ```
-Sets units in such a way that real-world units agree with LB units. Here $1m = 1/0.1=10$, which means that each meter is equal to 10 elements in grid and $0.01[\frac{m^2}{s}]  = \frac{0.01}{0.01} = 1 => 1 Iteration[s] = \frac{1}{10^2}$, so 1 second in real world is equal to 100 iterations. 
+This sets units in such a way that real-world units agree with LB units. Here $1m = 1/0.1=10$, which means that each meter is equal to 10 elements in grid and $0.01[\frac{m^2}{s}]  = \frac{0.01}{0.01} = 1 => 1 Iteration[s] = \frac{1}{10^2}$, so 1 second in real world is equal to 100 iterations. 
 
 Notice how parameters in `<Model>` and `Geometry` are specified and how generated case is the same as in previous example.
 
-It is important not to over-construct gauge variables. If `<Params Size="1m" gauge = "10"/>` would be added to the example above it would result in an error, as too many gauge gauges would be assigned.
+It is important not to over-construct gauge variables. If `<Param name="Size" value="1m" gauge="10"/>` would be added to the example above it would result in an error, as too many gauge gauges would be assigned.
 
 ##Control elements
 
@@ -80,23 +80,23 @@ It is important not to over-construct gauge variables. If `<Params Size="1m" gau
         </Wall>
     </Geometry>
     <Model>
-        <Params Velocity-Inlet="0.1"
-                nu="0.05"/>
+        <Param name="Velocity" value="0.1" zone="Inlet" />
+        <Param name="nu" value="0.05"/>
     </Model>
     <VTK Iterations="100" what = "U,P"/>
     <Solve Iterations="1000"/>
     <Control Iterations="1000">
         <CSV file="file.csv" Time="x*1000">
-        <Params Velocity="y*0.02+0.05"/>
-    </CSV>
-</Control>
+        <Param name="Velocity" value="y*0.02+0.05"/>
+        </CSV>
+    </Control>
 </CLBConfig>
 ```
-Changes `Velocity` according to the contents of `file.csv`. Here column 'x' is used to compute time and 'y' is used to calculate 'Velocity' value. Notice also that `Velocity` and `nu` parameters are given in `<Model>` container, without the need of creating separate tags for each parameter.
+Changes `Velocity` according to the contents of `file.csv`. Here, column 'x' is used to compute time and 'y' is used to calculate 'Velocity' value. Notice also that `Velocity` and `nu` parameters are given in `<Model>` container, without the need of creating separate tags for each parameter.
 
 ##Importing geometry
 
-It is possible to import geometry from `.stl` files. It can be done by using `<STL file="path_to_file"/>`. Additional arguments allow user to resize, rotate, and translate geometry. [ParaView can open `.stl` files](/4.-Post-processing/paraview) and provides a fast way of estabilishing correct import parameters. Imported geometry can be used along with geometry primitives, shown in other examples. 
+It is possible to import geometry from `.stl` files. It can be done by using `<STL file="path_to_file"/>`. Additional arguments allow user to resize, rotate, and translate geometry. [ParaView can open `.stl` files](/4.-Post-processing/paraview) and provides a fast way of establishing correct import parameters. Imported geometry can be used along with geometry primitives, shown in other examples. 
 
 Note: Only STL files in binary format are currently supported.
 
@@ -104,8 +104,8 @@ Note: Only STL files in binary format are currently supported.
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/">
         <Units>
-                <Params size="1m" gauge="70" />
-                <Params nu="1.4e-5m2/s" gauge="0.0001"/>
+                <Param name="size" value="1m" gauge="70" />
+                <Param name="nu" value="1.4e-5m2/s" gauge="0.0001"/>
         </Units>
         <Geometry nx="6m" ny="1m" nz="1m">
                 <MRT><Box/></MRT>
@@ -117,7 +117,7 @@ Note: Only STL files in binary format are currently supported.
                 </Wall>
         </Geometry>
         <Model>
-                <Params Velocity="0.01"/>
+                <Param name="Velocity" value="0.01"/>
         </Model>
         <VTK Iterations="1000"/>
         <Solve Iterations="10000"/>
@@ -141,8 +141,8 @@ A synthetic turbulence generator is implemented in TCLB solver. It is based on m
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/test">
     <Units>
-        <Params Velocity="1m/s" gauge="0.1"/>
-        <Params Viscosity="0.01m2/s" gauge="0.01"/>
+        <Param name="Velocity" value="1m/s" gauge="0.1"/>
+        <Param name="Viscosity" value="0.01m2/s" gauge="0.01"/>
     </Units>
     <Geometry nx="128" ny="128" nz="128">
         <MRT><Box/></MRT>
@@ -153,17 +153,17 @@ A synthetic turbulence generator is implemented in TCLB solver. It is based on m
         </Wall>
     </Geometry>
     <Model>
-        <Params Velocity-Inlet="1m/s"
-                nu="0.05m2/s"
-                Turbulence="0.1m/s"
-                MainWaveLength="10m"
-                DiffusionWaveLength = "100m"/>
+        <Param name="Velocity-Inlet="1m/s"
+        <Param name="nu" value="0.05m2/s"
+        <Param name="Turbulence" value="0.1m/s"
+        <Param name="MainWaveLength" value="10m"
+        <Param name="DiffusionWaveLength" value="100m"/>
     </Model>
     <VTK Iterations="100" what = "U,P"/>
     <Solve Iterations="1000"/>
 </CLBConfig>
 ```
-It is important to remember that in order to use implemented turbulence generator it is required to change `WVelocity` to `WVelocityTurbulent`, e.g.: `<WVelocityTurbulent><Box nx="1"/></WVelocityTurbulent>`. The generator has more customizable attributes, given in table below, but most of them is not required for generator to work. Only the mandatory ones are provided in example above.
+It is important to remember that in order to use implemented turbulence generator it is required to change `WVelocity` to `WVelocityTurbulent`, e.g.: `<WVelocityTurbulent><Box nx="1"/></WVelocityTurbulent>`. The generator has more customizable attributes, given in table below, but most of them are not required for the generator to work. Only the mandatory ones are provided in the example above.
 
 
 
