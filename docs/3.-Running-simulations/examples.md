@@ -64,7 +64,7 @@ This sets units in such a way that real-world units agree with LB units. Here $1
 
 Notice how parameters in `<Model>` and `Geometry` are specified and how generated case is the same as in previous example.
 
-It is important not to over-construct gauge variables. If `<Param name="Size" value="1m" gauge="10"/>` would be added to the example above it would result in an error, as too many gauge gauges would be assigned.
+It is important not to over-construct gauge variables. If `<Param value="1m" gauge="10"/>` would be added to the example above it would result in an error, as too many gauge gauges would be assigned.
 
 ##Control elements
 
