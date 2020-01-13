@@ -40,8 +40,8 @@ Note: It is not necessary to specify `<Box nx="1">` for Inlet/Outlet, as it is d
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/test">
     <Units>
-        <Param name="Velocity" value="1m/s" gauge="0.1"/>
-        <Param name="Viscosity" value="0.01m2/s" gauge="0.01"/>
+        <Param value="1m/s" gauge="0.1"/>
+        <Param value="0.01m2/s" gauge="0.01"/>
     </Units>
     <Geometry nx="12.8m" ny="12.8m" nz="12.8m">
         <MRT><Box/></MRT>
@@ -104,8 +104,8 @@ Note: Only STL files in binary format are currently supported.
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/">
         <Units>
-                <Param name="size" value="1m" gauge="70" />
-                <Param name="nu" value="1.4e-5m2/s" gauge="0.0001"/>
+                <Param value="1m" gauge="70" />
+                <Param value="1.4e-5m2/s" gauge="0.0001"/>
         </Units>
         <Geometry nx="6m" ny="1m" nz="1m">
                 <MRT><Box/></MRT>
@@ -141,8 +141,8 @@ A synthetic turbulence generator is implemented in TCLB solver. It is based on m
 <?xml version="1.0"?>
 <CLBConfig version="2.0" output="output/test">
     <Units>
-        <Param name="Velocity" value="1m/s" gauge="0.1"/>
-        <Param name="Viscosity" value="0.01m2/s" gauge="0.01"/>
+        <Param value="1m/s" gauge="0.1"/>
+        <Param value="0.01m2/s" gauge="0.01"/>
     </Units>
     <Geometry nx="128" ny="128" nz="128">
         <MRT><Box/></MRT>

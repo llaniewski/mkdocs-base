@@ -12,7 +12,7 @@ All case properties (geometry,BCs,model settings, etc.) are specified within XML
 <?xml version="1.0"?>
 <CLBConfig>
         <Units>
-              <Param name="parameter" value="X" gauge="Y"/> <!-- Specify relation between LB and real world units here -->
+              <Param value="X" gauge="Y"/> <!-- Specify relation between LB and real world units here -->
         </Units>
         <Geometry>  <!-- Domain size --> 
               <!-- Collision type, boundary conditions, creating/importing objects -->
