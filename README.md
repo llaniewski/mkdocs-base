@@ -16,6 +16,13 @@ $ pip3 install virtualenv virtualenvwrapper
 $ source /usr/local/bin/virtualenvwrapper.sh
 ```
 
+Depending on the version install, the source location can differ and environment paths need to be exported:
+```sh
+$ export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+$ export VIRTUALENVWRAPPER_VIRTUALENV=/home/<user>/.local/bin/virtualenv
+$ source ~/.local/bin/virtualenvwrapper.sh
+```
+
 You can lookup your pythons' distributions using `$ whereis python` or just pick the default one...
 
 ```sh
