@@ -6,8 +6,8 @@ d3q19_heat_adj_art
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 756d304)/src/d3q19_heat_adj_art/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 756d304)/src/d3q19_heat_adj_art/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at d40be59)/src/d3q19_heat_adj_art/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at d40be59)/src/d3q19_heat_adj_art/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -68,9 +68,11 @@ d3q19_heat_adj_art
 | Group | Types |
 | --- | --- |
 |ADDITIONALS|Heater, HeatSource|
+|ALL|Clear|
 |BOUNDARY|EPressure, Solid, Wall, WPressure, WPressureL, WVelocity|
 |COLLISION|BGK, MRT|
 |DESIGNSPACE|DesignSpace|
+|NONE|None|
 |OBJECTIVE|Thermometer, Inlet, Outlet|
 |SETTINGZONE|DefaultZone|
 

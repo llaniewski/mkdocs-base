@@ -6,8 +6,8 @@ d2q9_diff
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 756d304)/src/d2q9_diff/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 756d304)/src/d2q9_diff/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at d40be59)/src/d2q9_diff/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at d40be59)/src/d2q9_diff/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -48,8 +48,10 @@ d2q9_diff
 
 | Group | Types |
 | --- | --- |
+|ALL|Clear|
 |BOUNDARY|EPressure, Solid, Wall, WPressure|
 |COLLISION|MRT|
+|NONE|None|
 |OBJECTIVE|Obj1, Obj2|
 |SETTINGZONE|DefaultZone|
 

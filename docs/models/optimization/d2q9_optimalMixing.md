@@ -6,8 +6,8 @@ d2q9_optimalMixing
 
 ## Details
 [Model description files](Model description) files for this model:
-[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 756d304)/src/d2q9_optimalMixing/Dynamics.c.Rt)
-[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at 756d304)/src/d2q9_optimalMixing/Dynamics.R)
+[Dynamics.c](https://github.com/llaniewski/TCLB/blob/(HEAD detached at d40be59)/src/d2q9_optimalMixing/Dynamics.c.Rt)
+[Dynamics.R](https://github.com/llaniewski/TCLB/blob/(HEAD detached at d40be59)/src/d2q9_optimalMixing/Dynamics.R)
 
 ### [Zonal Settings](Settings)
 
@@ -59,8 +59,10 @@ d2q9_optimalMixing
 
 | Group | Types |
 | --- | --- |
+|ALL|Clear|
 |BOUNDARY|NMovingWall, SWall, Solid, Wall|
 |COLLISION|MRT|
+|NONE|None|
 |SETTINGZONE|DefaultZone|
 
 ### [Solved fields](Fields)
